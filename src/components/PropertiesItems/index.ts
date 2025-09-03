@@ -1,0 +1,2 @@
+export { PropertiesItems } from './PropertiesItems';
+

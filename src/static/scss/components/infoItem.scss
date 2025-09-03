@@ -1,0 +1,92 @@
+@use "sass:math";
+@import '@/static/scss/base/constants.scss';
+
+.info-item {
+  &-inner {
+    display: flex;
+  }
+  &-media {
+    font-size: var(--media-size);
+    height: 1em;
+    width: 1em;
+    flex: 0 0 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: $border-base;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 4px;
+
+    & + .info-item-body {
+      padding-left: 14px;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 10px;
+    }
+  }
+  &-icon {
+    font-size: 0.52em;
+  }
+  &-body {
+    flex: 1 0 calc(100% - var(--media-size));
+    max-width: calc(100% - var(--media-size));
+    min-height: var(--media-size);
+    line-height: 1.15;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &-label {
+    color: $color-secondary;
+  }
+  &-text {
+    font-weight: 500;
+  }
+  &-content {
+    padding-right: 14px;
+    padding: 4px 14px 4px 0;
+  }
+
+  &-with-image {
+    .info-item-media {
+      border: none;
+    }
+  }
+
+  &-rounded {
+    .info-item-media {
+      border-radius: 50%;
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &-simple {
+    .info-item-text {
+      font-weight: 400;
+    }
+  }
+
+  &.avatar-type {
+    &-primary {
+      .info-item-media {
+        background-color: #ECF7F8;
+        border-color: #ECF7F8;
+        color: $color-primary;
+      }
+    }
+  }
+}

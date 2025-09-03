@@ -1,0 +1,1 @@
+export { PsychologistsList } from './PsychologistsList';

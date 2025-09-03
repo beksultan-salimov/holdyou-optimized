@@ -1,0 +1,30 @@
+:root {
+  --font-base: 'Raleway', sans-serif;
+  --font-cera: 'CeraPro', var(--font-base);
+  --font-blog: 'Bloggersans', var(--font-base);
+  --font-roboto: 'Roboto', var(--font-base); // TODO need add
+
+  --color-text: #262524;
+  --color-placeholder: $color-placeholder;
+
+  --color-primary: #00BDC2;
+  --color-primary-hover: #00D2D7;
+
+  --color-primary-old: #00D2D7;
+  --color-primary-old-hover: #00BDC2;
+
+  --color-accent-hover: #FF607B;
+  --color-accent-active: #EB4C67;
+
+  --color-primary-lighten: #E8FFFF;
+  --color-secondary: rgba(38, 37, 36, 0.5);
+
+  --color-error: #ff7373;
+
+  --media-shadow: rgba(146,209,206,.3);
+
+  --tile-shadow: 0 3.79711px 8px rgba(0, 0, 0, 0.1);
+
+  // --psy-offset: 20px;
+  // --psy-list-width: 33.33%;
+}

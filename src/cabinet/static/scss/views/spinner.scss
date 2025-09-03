@@ -1,0 +1,28 @@
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation-name: spinner;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  line-height: 1;
+  display: inline-flex;
+  color: #00bdc2;
+  height: 1em;
+  width: 1em;
+
+  .ant-spin-dot {
+    font-size: 1em;
+  }
+  &.is-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

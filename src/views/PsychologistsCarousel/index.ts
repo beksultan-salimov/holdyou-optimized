@@ -1,0 +1,1 @@
+export { PsychologistsCarousel } from './PsychologistsCarousel';

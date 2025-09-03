@@ -1,0 +1,48 @@
+@import '@/static/scss/base/media.scss';
+
+.modal-success {
+  font-size: 18px;
+  line-height: 1.25;
+  text-align: center;
+
+  .rc-dialog-body {
+    padding: 40px 40px 60px;
+  }
+
+  &__inner {
+    width: 350px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  &__image {
+    margin-bottom: 20px;
+
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-cera);
+    font-weight: 700;
+    font-size: 1.4em;
+    line-height: 1.1;
+  }
+
+  &__text {
+    margin-top: 20px;
+  }
+
+  &__image-custom {
+    margin: 0 auto 20px;
+  }
+
+  &__auth {
+    margin-top: 20px;
+
+    .btn {
+      min-width: 150px;
+    }
+  }
+}

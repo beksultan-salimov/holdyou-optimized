@@ -1,0 +1,101 @@
+.dropzone-images {
+  border: $border-base;
+  border-radius: 10px;
+  padding: 10px;
+  display: block;
+
+  .ant-upload-drag {
+    background-color: transparent;
+    border: 1.5px dashed #d7e3e4;
+    color: #99adae;
+
+    &-container {
+      max-width: 250px;
+      display: block;
+      margin: 0 auto;
+      line-height: 1.2;
+      padding: 0 15px;
+    }
+    .ant-upload {
+      padding-top: 40px;
+      padding-bottom: 30px;
+    }
+    .dropzone-icon {
+      display: flex;
+      margin: 0 auto 12px;
+      font-size: 70px;
+      justify-content: center;
+    }
+    .link {
+      color: $color-primary;
+      border-bottom: 1px solid $color-primary;
+      transition: border-color .2s ease;
+    }
+
+    &:hover {
+      .link {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+
+  .ant-upload-list {
+    .ant-progress {
+      display: none !important;
+    }
+    .ant-upload-list-item {
+      border: $border-base;
+      border-radius: 10px;
+      height: 56px;
+      padding: 12px;
+      &-error {
+        border-color: $color-red;
+      }
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      .ant-upload-list-item-name {
+        padding: 0 14px;
+      }
+      .ant-upload-icon {
+        .anticon {
+          font-size: 30px;
+        }
+      }
+      .ant-upload-list-item-actions {
+        .ant-upload-list-item-action {
+          opacity: 1;
+          border: $border-base;
+          height: 35px;
+          width: 35px;
+          border-radius: 10px;
+          .anticon {
+            font-size: 17px;
+
+            &-delete {
+              color: #d44d4d;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .dropzone-item-preview {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

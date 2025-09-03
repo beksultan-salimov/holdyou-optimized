@@ -1,0 +1,60 @@
+@import '@/static/scss/base/media.scss';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.media {
+  width: 100%;
+  height: 244px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  position: relative;
+
+  a {
+    background-color: #6dcbd2;
+    display: block;
+    height: 100%;
+    transition: opacity .2s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  img {
+    object-fit: cover
+  }
+}
+
+.header {
+  align-items: center;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 74px;
+  padding: 5px 15px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: center;
+  transition: color .2s ease;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+@include media(sm) {
+  .media {
+    height: 180px;
+  }
+}

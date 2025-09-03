@@ -1,0 +1,52 @@
+.cabinet-header {
+  margin-bottom: 60px;
+
+  &-inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &-actions {
+    margin-left: auto;
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 1.1;
+  }
+
+  @include media(lg) {
+    &-title {
+      font-size: 48px;
+    }
+  }
+  @include media(md) {
+    &-title {
+      font-size: 36px;
+    }
+  }
+  @include media(sm) {
+    margin-bottom: 30px;
+    &-inner {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+    &-actions {
+      margin-left: 0;
+    }
+    &-title {
+      margin-bottom: 14px;
+    }
+    .cabinet-header-btn-cta {
+      height: 50px;
+      font-size: 15px;
+    }
+  }
+  @include media(xxs) {
+    &-title {
+      font-size: 28px;
+    }
+  }
+}

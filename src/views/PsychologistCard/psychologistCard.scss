@@ -1,0 +1,442 @@
+.psh-card {
+  font-size: 17px;
+  display: flex;
+  flex-direction: column;
+
+  &__media,
+  &__footer {
+    .btn,
+    .ant-btn {
+      font-size: 1em;
+    }
+  }
+
+  &__media {
+    background: #ccc;
+    display: block;
+    padding-bottom: 100%;
+    position: relative;
+    width: 100%;
+
+    &__img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__header {
+    position: relative;
+    padding-bottom: 22px;
+    line-height: 1.2;
+
+    &::after {
+      background: linear-gradient(90deg, #00bdc2, #ecf7f8);
+      border-radius: 10px;
+      bottom: 0;
+      content: '';
+      height: 3px;
+      left: 50%;
+      position: absolute;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: 100%;
+    }
+  }
+
+  &__header__experience {
+    color: var(--color-primary);
+    font-size: 0.875em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    &::before {
+      background-image: url(/img/icons/experience.svg);
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      display: inline-block;
+      height: 19px;
+      line-height: 1;
+      margin-right: 10px;
+      width: 13px;
+    }
+  }
+
+  &__body {
+    padding-top: 22px;
+    line-height: 1.3;
+
+    p {
+      & + p {
+        margin-top: 15px;
+      }
+    }
+
+    &__text {
+      display: block;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__footer {
+    padding-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+    justify-content: space-between;
+
+    .btn,
+    .ant-btn {
+      flex: 0 0 calc(50% - 10px);
+      display: flex;
+    }
+  }
+
+  &__name {
+    margin-bottom: 12px;
+
+    &-link {
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &__badges-top,
+  &__badges-bottom {
+    position: absolute;
+  }
+  &__badges-top {
+    right: 15px;
+    top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    .psh-badge {
+      margin-bottom: 5px;
+    }
+  }
+  &__badges-bottom {
+    left: 15px;
+    bottom: 15px;
+  }
+
+  // types
+  &--default {
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    font-size: 16px;
+
+    .psh-card {
+      &__header {
+        padding-bottom: 0;
+        &::after {
+          display: none;
+        }
+      }
+      &__body {
+        line-height: 1.2;
+        &__label {
+          margin-bottom: 4px;
+          display: inline-block;
+        }
+      }
+      &__content {
+        border: 1px solid #b7d6d7;
+        border-radius: 0 0 16px 16px;
+        border-top: 0;
+        padding: 30px;
+      }
+      &__media {
+        border-radius: 16px 16px 0 0;
+
+        &__actions {
+          background-color: rgba(255, 255, 255, 0.9);
+          border-radius: 14px 14px 0 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          opacity: 0;
+          pointer-events: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          overflow: hidden;
+          transform: scale(0);
+          transition: opacity 0.25s ease, transform 0s ease 0.25s;
+
+          .btn,
+          .ant-btn {
+            font-family: var(--font-base);
+            width: 180px;
+            margin: 5px;
+            font-size: 17px;
+          }
+          .psh-card__btn--more {
+            margin-top: 20px;
+            text-align: center;
+          }
+        }
+
+        &__img {
+          border-radius: 15px 15px 0 0;
+        }
+
+        @media (hover: hover) {
+          &:hover {
+            .psh-card__media__actions {
+              opacity: 1;
+              transform: scale(1);
+              transition: opacity 0.25s ease, transform 0s ease 0s;
+              pointer-events: auto;
+            }
+          }
+        }
+      }
+      &__name {
+        font-size: 1.625em;
+        font-weight: 600;
+        line-height: 1.2;
+      }
+      &__description {
+        font-size: 1.125em;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+      &__footer {
+        flex-wrap: wrap;
+        .btn,
+        .ant-btn {
+          font-family: var(--font-base);
+          font-size: 17px;
+          flex: 1 0 100%;
+        }
+        .psh-card__btn--more {
+          margin-top: 20px;
+          text-align: center;
+          height: auto !important;
+        }
+      }
+    }
+
+    .properties-items {
+      display: none;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+    .properties-item {
+      margin-bottom: 0;
+
+      &--experience {
+        .properties-item__icon {
+          color: var(--color-primary);
+        }
+      }
+    }
+  }
+
+  &--simple {
+    .psh-card {
+      &__content {
+        padding-top: 20px;
+      }
+      &__media {
+        border-radius: 20px;
+
+        &__img {
+          border-radius: 20px;
+        }
+      }
+      &__name {
+        font-size: 1.5em;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &--in_schedule {
+    background: #ffffff;
+    border: 1px solid #cde6e6;
+    border-radius: 20px;
+    font-size: 16px;
+    padding: 20px;
+
+    .psh-card {
+      &__name {
+        font-size: 1.125em;
+        font-weight: 700;
+        margin-bottom: 0.35em;
+      }
+      &__media,
+      &__media__img {
+        border-radius: 10px;
+      }
+      &__header {
+        padding-top: 20px;
+        padding-bottom: 0;
+        text-align: center;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+
+  @media (max-width: 1220px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 1120px) {
+    &__footer {
+      .btn,
+      .ant-btn {
+        flex: 1 0 100%;
+        & + * {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    &--default {
+      .psh-card {
+        &__content {
+          padding-top: 20px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &--default {
+      .psh-card {
+        &__name {
+          font-size: 24px;
+        }
+        &__description {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    &--default {
+      position: relative;
+
+      .properties-items {
+        display: block;
+      }
+      .psh-card {
+        &__header {
+          padding-top: 15px;
+          padding-bottom: 0;
+          padding-right: 115px;
+          min-height: 100px;
+        }
+        &__name {
+          font-size: 20px;
+        }
+        &__description {
+          font-size: 1em;
+          font-weight: 400;
+        }
+        &__media {
+          border-radius: 8px;
+          height: 100px;
+          width: 100px;
+          padding: 0;
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          &__img {
+            border-radius: 8px;
+          }
+        }
+        &__badges-top,
+        &__badges-bottom,
+        &__media__actions {
+          display: none !important;
+        }
+        &__body {
+          padding-top: 15px;
+        }
+        &__content {
+          border: 1px solid #cde6e6;
+          border-radius: 16px;
+          padding-top: 15px;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        &__btn {
+          &--order {
+            height: 46px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    &--simple {
+      font-size: 14px;
+
+      .psh-card {
+        &__media,
+        &__footer {
+          .btn,
+          .ant-btn {
+            height: 50px;
+          }
+        }
+        &__media {
+          &__actions {
+            .btn,
+            .ant-btn {
+              width: 150px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 355px) {
+    &--default {
+      .psh-card {
+        &__header {
+          padding-top: 115px;
+          padding-right: 0;
+        }
+        &__media {
+          left: 15px;
+          right: inherit;
+        }
+      }
+    }
+  }
+}

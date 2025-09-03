@@ -1,0 +1,109 @@
+@import '@/static/scss/base/media.scss';
+
+.hero {
+  position: relative;
+
+  .title {
+    line-height: 1;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 630px;
+    min-height: 670px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  &__media {
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(25%, -57%); // 24, -62
+    z-index: -1;
+  }
+
+  @include media(lg) {
+    &__content {
+      min-height: 560px;
+      max-width: 600px;
+    }
+    &__media {
+      // max-width: 60%;
+      // top: 0;
+      // transform: translate(23%, -22%);
+      max-width: 53%;
+      top: 0;
+      transform: translate(25%, -8%);
+    }
+  }
+  @include media(md) {
+    &__content {
+      min-height: 0;
+      padding: 100px 0;
+      max-width: 58%;
+    }
+  }
+  @include media(900) {
+    &__content {
+      padding: 70px 0;
+    }
+  }
+  @include media(sm) {
+    &__content {
+      padding: 50px 0;
+    }
+  }
+  @include media(xs) {
+    .title {
+      text-align: center;
+      justify-content: center;
+    }
+    .text {
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+    &__content {
+      padding-top: 270px;
+      max-width: 100%;
+    }
+    &__media {
+      right: 50%;
+      top: 0;
+      transform: translate(50%, -7%);
+      max-width: 270px;
+    }
+  }
+}
+
+.hero-image {
+  position: relative;
+  border-radius: 50%;
+  // height: 675px;
+  width: 675px;
+  max-width: 100%;
+  padding-bottom: 100%;
+
+  &::before {
+    content: '';
+    height: 117%;
+    width: 117%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-55%, -57%);
+    border: 50px solid #e8fffe;
+    border-radius: 50%;
+    z-index: -1;
+  }
+  img {
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+  }
+}

@@ -1,0 +1,46 @@
+@import '@/static/scss/base/media.scss';
+
+.main-offine-centers {
+  &__map {
+    border-radius: 10px;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+  }
+  .col-1 {
+    flex: 0 0 43%;
+    max-width: 43%;
+    padding-right: 50px;
+
+    .btn {
+      margin-top: 50px;
+      width: 100%;
+    }
+  }
+  .col-2 {
+    flex: 1;
+  }
+
+  @include media(lg) {
+    .col-1 {
+      padding-right: 30px;
+    }
+  }
+  @include media(sm) {
+    .row {
+      display: block;
+    }
+    .col-1 {
+      margin-bottom: 60px;
+      padding-right: 0;
+      max-width: 100%;
+    }
+    .main-offine-centers__map {
+      border-radius: 0;
+      height: 360px;
+      margin-left: -20px;
+      max-height: 85vh;
+      width: calc(100% + 40px);
+    }
+  }
+}

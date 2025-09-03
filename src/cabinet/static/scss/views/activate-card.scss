@@ -1,0 +1,58 @@
+@import '@/static/scss/base/media.scss';
+
+.activate-card {
+  font-size: 18px;
+  text-align: center;
+  padding: 40px 20px;
+
+  &-media {
+    margin-bottom: 40px;
+
+    img {
+      display: inline-block;
+    }
+  }
+  &-title {
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  &-form {
+    margin: 26px auto 0;
+    width: 390px;
+    max-width: 100%;
+
+    .btn {
+      width: 100%;
+    }
+  }
+
+  @include media(lg) {
+    &-title {
+      font-size: 48px;
+    }
+  }
+  @include media(md) {
+    &-title {
+      font-size: 36px;
+    }
+  }
+  @include media(sm) {
+  }
+  @include media(xs) {
+    padding: 20px 10px;
+    &-media {
+      margin-bottom: 24px;
+    }
+    &-title {
+      font-size: 32px;
+    }
+  }
+  @include media(xxs) {
+    font-size: 16px;
+    &-title {
+      font-size: 26px;
+    }
+  }
+}

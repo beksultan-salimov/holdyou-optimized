@@ -1,0 +1,33 @@
+.simple-pagination {
+  text-align: center;
+  &-list {
+    display: inline-flex;
+  }
+  &-item {
+    flex: 0 0 50%;
+    overflow: hidden;
+    span {
+      background-color: var(--color-primary-old);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 5px;
+      display: block;
+      padding: 13px 26px;
+      transition: all .25s ease;
+      margin: 0 6px;
+      white-space: nowrap;
+    }
+    & > span {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    a {
+      &:hover {
+        span {
+          background-color: var(--color-primary-old-hover);
+        }
+      }
+    }
+  }
+}

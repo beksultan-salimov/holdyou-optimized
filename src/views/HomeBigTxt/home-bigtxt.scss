@@ -1,0 +1,45 @@
+@import '@/static/scss/base/media.scss';
+
+
+.bigtxt {
+  font-family: Bloggersans, sans-serif;
+  line-height: 1.25;
+  color: #656565;
+
+  ul, ol, p {
+    margin-bottom: 1.1em;
+  }
+  ul, ol {
+    padding-left: 30px;
+  }
+  ul {
+    list-style: disc;
+  }
+  ol {
+    list-style: decimal;
+  }
+  li {
+    margin-bottom: 10px;
+
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+  }
+  h2, h3, h4, h5, h6 {
+    font-size: 23px;
+    font-family: var(--font-cera);
+    font-weight: 600;
+    line-height: 1.1;
+    padding-top: 32px;
+    margin-bottom: 16px;
+  }
+
+  .collapse-text-btn {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  @include media(sm) {
+    font-size: 14px;
+  }
+}

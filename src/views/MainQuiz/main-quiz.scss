@@ -1,0 +1,332 @@
+@import '@/static/scss/base/media.scss';
+
+.main-quiz {
+  $c: &;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 80px 0;
+  position: relative;
+  width: 100%;
+
+  &__result,
+  &__section,
+  &__footer {
+    padding-left: 105px;
+    padding-right: 105px;
+  }
+  &__section {
+    outline: none !important;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding-left: 65px;
+    min-height: 45px;
+    margin-bottom: 40px;
+
+    &__media {
+      height: 45px;
+      width: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 2px;
+      left: 0;
+      color: #fff;
+
+      &-bg {
+        color: var(--color-primary-old);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 45px;
+      }
+      &-count {
+        font-size: 14px;
+        font-weight: 700;
+        position: relative;
+        & > span {
+          opacity: 0.75;
+        }
+      }
+      &-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .anticon {
+          color: #fff;
+          font-size: 24px;
+        }
+      }
+    }
+    &__title {
+      font-size: 1.16em;
+      font-weight: 700;
+    }
+    &__subtitle {
+      color: var(--color-secondary);
+      font-size: 0.84em;
+      margin-top: -1px;
+    }
+  }
+
+  &__question-types {
+    margin-bottom: 65px;
+    #{$c} {
+      &__header {
+        margin-bottom: 15px;
+      }
+      &__body {
+        padding-left: 65px;
+      }
+    }
+  }
+
+  &__question-final {
+    display: flex;
+
+    .col {
+      flex: 0 0 50%;
+      max-width: 50%;
+
+      &--1 {
+        padding-right: 10.5%;
+      }
+      &--2 {
+        padding-left: 2.25%;
+      }
+    }
+
+    .form-field-radiogroup {
+      margin-bottom: 40px;
+      .form-field__label {
+        margin-bottom: 14px;
+      }
+      .radio-group {
+        gap: 14px;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    position: relative;
+  }
+
+  &__btn-next,
+  &__btn-submit {
+    font-family: var(--font-base);
+    height: 51px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: auto;
+  }
+  &__btn-prev,
+  &__btn-reload {
+    font-family: var(--font-base);
+    font-weight: 600;
+  }
+  &__btn-reload {
+    margin-left: auto;
+  }
+
+  &__result-body {
+    display: flex;
+    width: calc(100% + 20px);
+    margin-left: -10px;
+  }
+  &__result-item {
+    flex: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+    word-break: break-word;
+  }
+  &__result-card {
+    border: 1px solid #cde6e6;
+    border-radius: 20px;
+    padding: 30px;
+
+    &__title {
+      font-size: 1.16em;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 0.5em;
+    }
+    &__text {
+      font-size: 0.95em;
+      font-weight: 400;
+      line-height: 1.25;
+    }
+  }
+  &__result-footer {
+    display: flex;
+    margin-top: 40px;
+  }
+
+  .form-field__label {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .slick-list {
+    transition: height 0.3s ease;
+  }
+
+  .slick-dots {
+    display: flex !important;
+    height: 51px;
+    margin-bottom: -51px;
+    margin-top: 20px;
+    pointer-events: none;
+    li,
+    button {
+      width: 50px;
+      height: 5px;
+      pointer-events: none;
+    }
+
+    button {
+      background-color: var(--color-primary-old);
+      border: none;
+      border-radius: 20px;
+      &::before {
+        display: none;
+      }
+    }
+
+    .slick-active {
+      button {
+        background-color: rgba(38, 37, 36, 0.5);
+      }
+
+      & ~ li {
+        button {
+          background-color: rgba(38, 37, 36, 0.1);
+        }
+      }
+    }
+  }
+
+  @include media(lg) {
+    padding-top: 55px;
+    padding-bottom: 55px;
+    &__result,
+    &__section,
+    &__footer {
+      padding-left: 55px;
+      padding-right: 55px;
+    }
+  }
+
+  @include media(md) {
+    padding-top: 20px;
+    padding-bottom: 0;
+    &__result,
+    &__section,
+    &__footer {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    &__result {
+      padding-bottom: 20px;
+      &-card {
+        font-size: 16px;
+        padding: 20px;
+      }
+    }
+    .bubble-select {
+      gap: 10px;
+    }
+    .bubble-option {
+      min-height: 41px;
+      height: auto;
+    }
+    .bubble-text {
+      font-size: 16px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-left: 17px;
+      padding-right: 17px;
+      text-align: left;
+      border-radius: 21px;
+      &::after {
+        border-radius: 21px;
+      }
+    }
+    .form-field__label {
+      font-size: 15px;
+    }
+    .radio-label {
+      font-size: 14px;
+    }
+
+    &__question-final {
+      .col--1 {
+        padding-right: 5%;
+      }
+    }
+    &__footer {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 15px;
+      transform: translateY(-100%);
+    }
+    .slick-dots {
+      margin-bottom: 0;
+      margin-top: 70px;
+    }
+
+    &__result {
+      &-body {
+        flex-direction: column;
+      }
+      &-item {
+        flex: 1 0 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+
+        &:nth-last-child(1) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  @include media(900) {
+  }
+
+  @include media(xs) {
+    &__header {
+      padding-top: 60px;
+      padding-left: 0;
+    }
+    &__question-types {
+      .main-quiz__body {
+        padding-left: 0;
+      }
+    }
+    &__question-final {
+      flex-wrap: wrap;
+      .col {
+        flex: 1 0 100%;
+        max-width: 100%;
+        padding-right: 0;
+      }
+      .field-md {
+        height: 44px;
+      }
+    }
+  }
+}

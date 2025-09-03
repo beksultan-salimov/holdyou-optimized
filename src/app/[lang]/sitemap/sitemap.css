@@ -1,0 +1,63 @@
+/* app/sitemap/sitemap.css */
+
+.sitemap-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.sitemap-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.5rem;
+}
+
+.sitemap-section {
+    margin-bottom: 3rem;
+}
+
+.sitemap-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    border-left: 4px solid #3b82f6;
+    color: #1f2937;
+}
+
+.sitemap-link-list {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.sitemap-link {
+    display: block;
+    margin: 0.3rem 0;
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.sitemap-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+.sitemap-sublist {
+    margin-top: 0.5rem;
+    margin-left: 1.5rem;
+    padding-left: 1rem;
+    border-left: 2px dashed #ccc;
+}
+
+.sitemap-subitem {
+    color: #374151;
+}
+
+.sitemap-subitem:hover {
+    color: #111827;
+    text-decoration: underline;
+}

@@ -1,0 +1,101 @@
+@import '@/static/scss/base/media.scss';
+
+.news-list-item {
+  border-radius: 5px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 110px;
+  overflow: hidden;
+
+  &__inner {
+    display: flex;
+  }
+  &__media {
+    background-color: #f0f0f0;
+    flex: 0 0 32%;
+    position: relative;
+  }
+  &__content {
+    flex: 1;
+    max-width: 68%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 45px 40px 45px 65px;
+  }
+  &__title,
+  &__text {
+    font-family: var(--font-base);
+    line-height: 1.15;
+  }
+  &__title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 45px;
+  }
+  &__text {
+    color: var(--color-text);
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 45px;
+  }
+  &__footer {
+    text-align: right;
+  }
+  &__btn-more {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  @include media(lg) {
+    margin-bottom: 60px;
+    &__title {
+      margin-bottom: 35px;
+    }
+    &__content {
+      padding-top: 35px;
+      padding-bottom: 35px;
+    }
+  }
+  @include media(md) {
+    &__media {
+      flex-basis: 40%;
+    }
+    &__content {
+      max-width: 60%;
+      padding: 25px 35px 30px 40px;
+    }
+    &__title {
+      font-size: 20px;
+      margin-bottom: 1.5em;
+    }
+    &__btn-more,
+    &__text {
+      font-size: 18px;
+    }
+  }
+  @include media(sm) {
+    &__inner {
+      display: block;
+    }
+    &__media {
+      height: 240px;
+      width: 100%;
+    }
+    &__content {
+      max-width: 100%;
+      padding: 25px 30px;
+    }
+    &__text {
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+  }
+  @include media(xs) {
+    &__title {
+      font-size: 18px;
+    }
+    &__content {
+      padding: 20px;
+    }
+  }
+}

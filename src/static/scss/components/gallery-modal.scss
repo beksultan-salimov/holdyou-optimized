@@ -1,0 +1,87 @@
+@import '@/static/scss/base/media.scss';
+
+.modal-gallery {
+  $c: &;
+  pointer-events: none;
+  &__main {
+    &__item {
+      &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    img {
+      max-height: 98vh;
+      border-radius: 8px;
+    }
+  }
+  &__thumbnails {
+    max-width: 100%;
+    margin: 0 auto 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    animation: 0.5s ease 1s fadeUp forwards;
+
+    &__item {
+      width: 60px;
+      height: 60px;
+      padding: 5px;
+
+      &__inner {
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        border-radius: 8px;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        transition: border-color 0.3s ease;
+
+        &:hover {
+          border-color: #f9f9f9;
+        }
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 6px;
+        object-fit: cover;
+      }
+    }
+  }
+  .slick-current {
+    #{$c} {
+      &__thumbnails {
+        &__item {
+          &__inner {
+            border-color: var(--color-primary);
+          }
+        }
+      }
+    }
+  }
+  .slick-track {
+    display: flex !important;
+    align-items: center;
+  }
+  .slick-arrow {
+    position: fixed;
+    opacity: 0;
+    animation: 0.5s ease 0.7s fadeUp forwards;
+  }
+  .slick-prev {
+    left: 20px;
+  }
+  .slick-next {
+    right: 20px;
+  }
+
+  .modal-gallery__thumbnails,
+  .rc-dialog-close,
+  .slick-arrow {
+    pointer-events: all;
+  }
+}

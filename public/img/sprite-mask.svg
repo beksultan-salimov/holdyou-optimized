@@ -1,0 +1,6 @@
+<svg width="0" height="0" style={{ position: "absolute" }}>
+<defs>
+  <clipPath id="waveMask1" clipPathUnits="objectBoundingBox"><path d="M0 0C0 0 0.53 0 0.815 0C1.1 0 0.767 1 0.975 1C1.18 1 0 1 0 1V0Z" fill="black" /></clipPath>
+  <clipPath id="waveMask2" clipPathUnits="objectBoundingBox"><path d="M0 1C0 1 0 0.47 0 0.185C0 -0.1 1 0.232 1 0.025C1 -0.18 1 1 1 1H0Z" fill="black"/></clipPath>
+</defs>
+</svg>

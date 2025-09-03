@@ -1,0 +1,263 @@
+.sidebar {
+  background-color: #FFF;
+  border-radius: 20px;
+  padding: 30px;
+
+  @include media(md) {
+    padding: 20px;
+  }
+  @include media(900) {
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+.sidebar-menu {
+  background-color: #FFF;
+
+  @include media(900) {
+    border-radius: 15px;
+    margin-top: 2px;
+    padding: 20px;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.sidebar-profile {
+  background-color: #FFF;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 19px;
+  position: relative;
+  line-height: 1;
+
+  &-avatar {
+    box-sizing: border-box;
+    background-color: #ecf7f8;
+    color: #00bdc2;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    flex: 0 0 60px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 3px;
+    .avatar-image {
+      position: relative;
+      border-radius: 100px;
+    }
+    .avatar-label {
+      padding: 0 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+
+  &-label {
+    line-height: 1.1;
+    margin-top: 15px;
+
+    b {
+      display: block;
+    }
+  }
+
+  &-btn-menu {
+    display: none;
+    font-size: 50px;
+    height: 1em;
+    width: 1em;
+    border-radius: 50%;
+    background-color: $color-primary;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    color: #FFF;
+    margin-top: -0.5em;
+
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+    }
+    &::before {
+      border-top: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      height: 12px;
+      width: 12px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -6px;
+      margin-left: -7px;
+    }
+    &::after {
+      width: 17px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -1px;
+      margin-left: -7px;
+      border-bottom: 2px solid currentColor;
+    }
+
+    &.active {
+      &::before,
+      &::after {
+        margin-top: -1px;
+        margin-left: -7px;
+        top: 50%;
+        left: 50%;
+        transform-origin: center center;
+        height: 2px;
+        width: 15px;
+      }
+      &::before {
+        border-bottom: 0;
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  @include media(900) {
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    padding: 15px 20px;
+    position: relative;
+    margin-bottom: 0;
+    background-color: #fff;
+
+    &-avatar {
+      height: 50px;
+      width: 50px;
+      flex-basis: 50px;
+    }
+    &-label {
+      margin-top: 0;
+      margin-left: 15px;
+      text-align: left;
+      padding-right: 60px;
+    }
+    &-btn-menu {
+      display: flex;
+    }
+  }
+
+  @include media(xxs) {
+    font-size: 14px;
+
+    &-avatar {
+      height: 40px;
+      width: 40px;
+      flex-basis: 40px;
+    }
+    &-btn-menu {
+      font-size: 40px;
+    }
+    &-label {
+      padding-right: 50px;
+    }
+  }
+}
+
+.sidebar-menu {
+  font-size: $font-size;
+
+  &-item {
+    margin-bottom: 15px;
+  }
+
+  &-link {
+    display: inline-flex;
+    align-items: center;
+    color: #262524;
+    text-decoration: none;
+    line-height: 1;
+    transition: color 0.25s ease;
+
+    &-icon {
+      height: 35px;
+      width: 35px;
+      border: 1px solid #D7E3E4;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: $font-size;
+      transition: color 0.2s ease, background-color 0.2s ease;
+      & + .sidebar-menu-link-content {
+        padding-left: 15px;
+      }
+    }
+
+    &-label {
+      margin-right: 8px;
+      user-select: none;
+    }
+
+    &-badge {
+      background-color: #00BDC2;
+      color: #FFF;
+      font-size: 14px;
+      height: 25px;
+      min-width: 25px;
+      border-radius: 25px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+
+      &.big-value {
+        padding-left: 3px;
+        padding-right: 3px;
+      }
+    }
+
+    &.active {
+      color: #00BDC2;
+
+      .sidebar-menu-link {
+        &-icon {
+          background-color: #00BDC2;
+          color: #FFF;
+        }
+      }
+    }
+
+    &:hover {
+      color: #00BDC2;
+    }
+  }
+}
+
+.sidebar-btn-logout {
+  font-size: 17px;
+  height: 35px;
+  border-radius: 10px;
+  margin-top: 15px;
+  width: 100%;
+  white-space: nowrap;
+
+  @include media(900) {
+    max-width: 220px;
+  }
+}

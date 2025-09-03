@@ -1,0 +1,17 @@
+.empty-card {
+  background: #ECF7F8;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+
+  &-image {
+    margin-bottom: 20px;
+  }
+  &-text {
+    color: $color-secondary;
+    text-align: center;
+  }
+}

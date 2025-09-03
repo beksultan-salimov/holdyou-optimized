@@ -1,0 +1,38 @@
+.items {
+  white-space: nowrap;
+  font-size: 22px;
+  height: 1em;
+}
+
+.item {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  font-size: inherit;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 3px;
+
+  &_empty {
+    background-image: url('/img/star.svg');
+  }
+  &_fill {
+    background-image: url('/img/star_fill.svg');
+  }
+}
+
+.clickable {
+  opacity: 0.5;
+  display: flex;
+  flex-direction: row-reverse;
+
+  .item {
+    cursor: pointer;
+    &:hover {
+      background-image: url('/img/star_fill.svg');
+      & ~ .item {
+        background-image: url('/img/star_fill.svg');
+      }
+    }
+  }
+}

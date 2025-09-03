@@ -1,0 +1,93 @@
+@import '@/static/scss/base/constants.scss';
+@mixin placeholderDefault($color) {
+  color: $color;
+  font-family: $font-family;
+  font-size: inherit;
+  font-weight: 400;
+  letter-spacing: normal;
+
+  opacity: 1;
+  filter: none;
+  transition: 0.175s opacity ease-in-out .175s;
+}
+
+@mixin placeholderOffDefault {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  transition: 0.175s opacity ease-in-out;
+}
+
+@mixin placeholder($color: #d0d0d0) {
+  &::-webkit-input-placeholder {
+    @include placeholderDefault($color);
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @include placeholderDefault($color);
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @include placeholderDefault($color);
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @include placeholderDefault($color);
+    @content;
+  }
+}
+
+@mixin placeholder-focus {
+  &:focus::-webkit-input-placeholder {
+    @include placeholderOffDefault;
+    @content;
+  }
+
+  &:focus::-moz-placeholder {
+    @include placeholderOffDefault;
+    @content;
+  }
+
+  &:focus:-moz-placeholder {
+    @include placeholderOffDefault;
+    @content;
+  }
+
+  &:focus:-ms-input-placeholder {
+    @include placeholderOffDefault;
+    @content;
+  }
+}
+
+@mixin media-square {
+  padding-bottom: 100%;
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+@mixin cropLines($size: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $size;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin text-bold-shadow($color: currentColor, $width: 0.1px) {
+  text-shadow:
+    -#{$width} -#{$width} 0 $color,
+    #{$width} -#{$width} 0 $color,
+    -#{$width} #{$width} 0 $color,
+    #{$width} #{$width} 0 $color;
+}

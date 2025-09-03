@@ -1,0 +1,220 @@
+@import '@/static/scss/base/media.scss';
+
+.reviews-carousel-home {
+  margin: -40px auto 0;
+  &-item {
+    padding: 40px 105px;
+  }
+  &-card {
+    background: #ffffff;
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    padding: 50px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 35px;
+      width: 70px;
+      background-image: url('/img/review.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &__inner {
+      margin: 0 auto;
+      max-width: 100%;
+    }
+
+    &__header {
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+    }
+    &__user {
+      position: relative;
+      min-height: 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &.has-avatar {
+        padding-left: 56px;
+      }
+      &-avatar {
+        height: 42px;
+        width: 42px;
+        border-radius: 42px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        overflow: hidden;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          border-radius: 42px;
+        }
+      }
+      &-name {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+      &-description {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.2;
+      }
+    }
+    &__tags {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 28px;
+      overflow-x: auto;
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        display: none;
+      }
+    }
+    &__tag {
+      border: 1px solid #b8d9d9;
+      border-radius: 40px;
+      padding: 12px 15px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      height: 34px;
+      white-space: nowrap;
+      font-size: 14px;
+    }
+    &__extra {
+      margin-left: auto;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      text-align: right;
+    }
+    &__stars {
+      font-size: 14px !important;
+    }
+    &__date {
+      font-size: 14px;
+      margin-top: 4px;
+    }
+    &__footer {
+      margin-top: 15px;
+    }
+    &__btn-cta {
+      font-weight: 500;
+    }
+    &__counter {
+      color: #878787;
+      margin-top: 15px;
+    }
+  }
+  .slick-list {
+    transition: height 0.3s ease;
+  }
+  .slick-track {
+    overflow: hidden;
+  }
+  .slick-arrow {
+    top: 160px;
+  }
+
+  @include media(lg) {
+    &-card {
+      font-size: 16px;
+    }
+  }
+
+  @include media(md) {
+    width: 100%;
+
+    &-item {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .slick-arrow {
+      top: 100%;
+    }
+    .slick-prev {
+      left: 10px;
+    }
+    .slick-next {
+      right: 10px;
+    }
+  }
+
+  @include media(sm) {
+    &-card {
+      font-size: 15px;
+      padding: 50px 20px 20px;
+      &__user {
+        text-align: center;
+        &-avatar {
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        &.has-avatar {
+          padding-left: 0;
+          padding-top: 52px;
+        }
+      }
+      &__header,
+      &__tags {
+        margin-bottom: 20px;
+      }
+      &__header {
+        justify-content: center;
+        flex-direction: column;
+      }
+      &__tags {
+        width: calc(100% + 40px);
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-left: -20px;
+      }
+      &__extra {
+        padding-left: 0;
+        margin: 15px 0 0;
+        text-align: center;
+        align-items: center;
+      }
+      &__counter {
+        margin-top: 10px;
+      }
+      &__btn-cta {
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media (max-width: 430px) {
+    &-item {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .slick-prev {
+      left: 0;
+    }
+    .slick-next {
+      right: 0;
+    }
+  }
+}

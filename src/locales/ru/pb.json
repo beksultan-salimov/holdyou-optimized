@@ -1,0 +1,20 @@
+{
+  "pb": {
+    "btn_undo": "Отменить предыдущее действие",
+    "btn_redo": "Вернуть предыдущее действие",
+    "btn_save": "Сохранить",
+    "btn_clear": "Очистить",
+    "btn_preview": "Посмотреть",
+    "btn_exit": "Выйти",
+    "block_info_left": "Секция 1",
+    "block_info_right": "Секция 2",
+    "block_text": "Текст",
+    "block_image": "Изображение",
+    "block_image_without_shadow": "Изображение без тени",
+    "save_success": "Изменения на странице успешно сохранены",
+    "categories": {
+      "titles": "Заголовки",
+      "basic": "Основные"
+    }
+  }
+}

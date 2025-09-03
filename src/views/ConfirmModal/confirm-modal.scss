@@ -1,0 +1,71 @@
+@import '@/static/scss/base/media.scss';
+
+.modal-confirm {
+  .rc-dialog {
+    &-content {
+      border-radius: 20px;
+      text-align: center;
+      padding: 40px;
+    }
+    &-header {
+      margin-bottom: 20px;
+      padding: 0;
+    }
+    &-title {
+      max-width: 285px;
+      margin: 0 auto;
+      line-height: 1.25;
+    }
+    &-body {
+      line-height: 1.25;
+      padding: 0;
+    }
+    &-footer {
+      padding: 0;
+      margin-top: 30px;
+      text-align: center;
+    }
+  }
+  &-footer {
+    display: flex;
+    justify-content: center;
+
+    .btn {
+      flex: 1;
+    }
+  }
+
+  &-title {
+    font-weight: 500;
+  }
+  &-icon {
+    background-color: #ffebeb;
+    font-size: 27px;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+
+  @include media(xs) {
+    .rc-dialog-content {
+      padding: 20px;
+    }
+  }
+}
+
+/**-------------------------------
+  * confirm-record
+  *-----------------------------*/
+.confirm-record {
+  .modal-confirm-footer {
+    .btn {
+      padding-left: 30px;
+      padding-right: 30px;
+      flex: 0;
+    }
+  }
+}

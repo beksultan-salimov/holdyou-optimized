@@ -1,0 +1,58 @@
+@import '@/static/scss/base/media';
+
+.need-auth-block {
+  background-image: url('/img/need_auth.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  border: 3px solid var(--color-primary);
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.65em 1em;
+
+  &__inner {
+    width: 370px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  &__icon {
+    display: block;
+    font-size: 1.93em;
+    height: 1em;
+    width: 1em;
+    position: relative;
+    margin: 0 auto 20px;
+    background-image: url('/img/icons/need-auth.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__title {
+    font-family: var(--font-cera);
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+
+  &__btn {
+    font-size: 19px;
+    width: 285px;
+    height: 70px;
+  }
+
+  @include media(lg) {
+    font-size: 24px;
+    &__btn {
+      height: 60px;
+    }
+  }
+  @include media(sm) {
+    font-size: 20px;
+    &__btn {
+      font-size: 17px;
+    }
+  }
+}

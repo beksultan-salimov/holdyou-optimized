@@ -1,0 +1,84 @@
+@import '@/static/scss/base/media.scss';
+
+.about-description {
+  box-shadow: 0 0 50px 20px #ebfcfc;
+  border-radius: 10px;
+  line-height: 1.5;
+  margin-bottom: 100px;
+  padding: 10px 20px;
+
+  @include media(md) {
+    margin-bottom: 60px;
+  }
+}
+
+.about-start {
+  margin-bottom: 140px;
+
+  .content-block {
+    .title {
+      margin-bottom: 50px;
+    }
+    p {
+      margin-bottom: 40px;
+    }
+  }
+  img {
+    transform: scaleX(-1);
+  }
+
+  @include media(md) {
+    margin-bottom: 60px;
+    .content-block {
+      font-size: 14px;
+      .title {
+        margin-bottom: 30px;
+      }
+      p {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  @include media(sm) {
+    .content-block {
+      max-width: 450px;
+
+      &__media {
+        max-width: 400px;
+      }
+    }
+  }
+}
+
+.about-help {
+  margin-bottom: 80px;
+  .title {
+    margin-bottom: 55px;
+  }
+  @include media(md) {
+    margin-bottom: 60px;
+  }
+  @include media(sm) {
+    .title {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+.about-team {
+  margin-bottom: 50px;
+  .title {
+    margin-bottom: 55px;
+  }
+
+  @include media(md) {
+    margin-bottom: 0;
+  }
+  @include media(sm) {
+    margin-bottom: 0;
+    .title {
+      margin-bottom: 35px;
+    }
+  }
+}

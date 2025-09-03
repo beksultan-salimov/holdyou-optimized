@@ -1,0 +1,180 @@
+.title {
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.1;
+  display: flex;
+  align-items: flex-start;
+
+  &-bold {
+    font-weight: 700;
+  }
+  &-medium {
+    font-weight: 500;
+  }
+  &-normal {
+    font-weight: 400;
+  }
+
+  &-base {
+    font-family: var(--font-base);
+  }
+  &-cera {
+    font-family: var(--font-cera);
+  }
+  &-blog {
+    font-family: var(--font-blog);
+  }
+
+
+  &-xxs {
+    font-size: 16px;
+  }
+  &-xs {
+    font-size: 19px;
+  }
+  &-xdefault {
+    font-size: 23px;
+  }
+  &-default {
+    font-size: 30px;
+  }
+  &-sm {
+    font-size: 36px;
+  }
+  &-md {
+    font-size: 40px;
+  }
+  &-lg {
+    font-size: 44px;
+  }
+  &-slg {
+    font-size: 48px;
+  }
+  &-xlg {
+    font-size: 64px;
+    letter-spacing: -.035em;
+  }
+
+  &-icon {
+    font-size: 1.05em;
+    margin-right: 0.5em;
+    position: relative;
+    top: -0.025em;
+  }
+  &-label {
+    // padding-right: 10px;
+    line-height: inherit;
+    font-size: inherit;
+  }
+  &-extra {
+    color: $color-secondary;
+    font-size: 0.85em;
+    font-weight: 400;
+    padding-top: 0.15em;
+    line-height: 1.1;
+    padding-left: 10px;
+  }
+  &-center {
+    justify-content: center;
+    text-align: center;
+  }
+
+  @include media(lg) {
+    &-xdefault {
+      font-size: 21px;
+    }
+    &-default {
+      font-size: 24px;
+    }
+    &-sm {
+      font-size: 32px;
+    }
+    &-md {
+      font-size: 34px;
+    }
+    &-lg {
+      font-size: 38px;
+    }
+    &-slg {
+      font-size: 42px;
+    }
+    &-xlg {
+      font-size: 48px;
+    }
+  }
+
+  @include media(md) {
+    &-xxs {
+      font-size: 14px;
+    }
+    &-xs {
+      font-size: 17px;
+    }
+    &-xdefault {
+      font-size: 19px;
+    }
+    &-default {
+      font-size: 22px;
+    }
+    &-sm {
+      font-size: 26px;
+    }
+    &-md {
+      font-size: 28px;
+    }
+    &-lg {
+      font-size: 32px;
+    }
+    &-slg {
+      font-size: 36px;
+    }
+    &-xlg {
+      font-size: 42px;
+    }
+  }
+
+  @include media(sm) {
+    &-xdefault {
+      font-size: 17px;
+    }
+    &-default {
+      font-size: 20px;
+    }
+    &-sm {
+      font-size: 22px;
+    }
+    &-md {
+      font-size: 24px;
+    }
+    &-lg {
+      font-size: 26px;
+    }
+    &-slg {
+      font-size: 28px;
+    }
+    &-xlg {
+      font-size: 30px;
+    }
+  }
+
+  @include media(xxs) {
+    &-default {
+      font-size: 18px;
+    }
+    &-sm {
+      font-size: 19px;
+    }
+    &-md {
+      font-size: 20px;
+    }
+    &-lg {
+      font-size: 23px;
+    }
+    &-slg {
+      font-size: 24px;
+    }
+    &-xlg {
+      font-size: 26px;
+    }
+  }
+}

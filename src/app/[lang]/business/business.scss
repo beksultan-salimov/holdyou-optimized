@@ -1,0 +1,140 @@
+@import '@/static/scss/base/media.scss';
+
+.page-business {
+  .section {
+    margin-bottom: 60px;
+  }
+  .cta {
+    display: flex;
+    width: 245px;
+    margin: 44px auto 0;
+  }
+
+  @include media(sm) {
+    .content-block {
+      max-width: 500px;
+
+      &__media {
+        max-width: 450px;
+      }
+    }
+  }
+}
+
+.business-main {
+  line-height: 1.5;
+  margin-bottom: 80px;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.15;
+  }
+
+  @include media(sm) {
+    &__title {
+      font-size: 20px;
+    }
+  }
+  @include media(xxs) {
+    &__title {
+      font-size: 18px;
+    }
+  }
+
+  @include media(md) {
+    margin-bottom: 60px;
+  }
+  @include media(sm) {
+    margin-bottom: 40px;
+  }
+}
+
+.business-stat {
+  margin-bottom: 100px;
+  &-items {
+    display: flex;
+    justify-content: space-around;
+  }
+  &-item {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 297px;
+    text-align: center;
+
+    &-media {
+      padding-bottom: 80%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: relative;
+      width: 80%;
+      margin: 0 auto;
+    }
+    &-count {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      font-size: 40px;
+      font-family: var(--font-cera);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-title {
+      font-size: 20px;
+      margin-top: 1em;
+      line-height: 1.4;
+      letter-spacing: -.05em;
+    }
+  }
+
+  @include media(md) {
+    margin-bottom: 60px;
+
+    &-item {
+      margin: 0;
+      width: calc(33.33% - 50px);
+      &-title {
+        font-size: 18px;
+      }
+      &-count {
+        font-size: 30px;
+      }
+    }
+  }
+  @include media(sm) {
+    margin-bottom: 40px;
+    &-item {
+      width: calc(33.33% - 10px);
+      &-title {
+        font-size: 14px;
+      }
+      &-count {
+        font-size: 20px;
+      }
+    }
+  }
+  @media (max-width: 440px) {
+    &-items {
+      display: block;
+    }
+    &-item {
+      max-width: 80%;
+      width: 200px;
+      margin: 0 auto 30px;
+    }
+  }
+}
+
+.business-how_work {
+  .title {
+    margin-bottom: 20px;
+  }
+}

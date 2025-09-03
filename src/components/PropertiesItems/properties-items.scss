@@ -1,0 +1,42 @@
+@import '@/static/scss/base/media.scss';
+
+.properties-item {
+  $c: &;
+  position: relative;
+  margin-bottom: 6px;
+
+  &__text {
+    min-height: 25px;
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+  }
+  &__icon {
+    img {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  &.is-icon {
+    padding-left: 26px;
+    #{$c} {
+      &__icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 20px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  &.is-bold {
+    #{$c} {
+      &__text {
+        font-weight: 700;
+      }
+    }
+  }
+}

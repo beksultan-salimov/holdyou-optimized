@@ -1,0 +1,38 @@
+@include media(sm) {
+  .ant-btn-lg,
+  .ant-select-lg.ant-select-single .ant-select-selector,
+  .react-tel-input .form-control {
+    height: 50px;
+  }
+  .ant-btn-lg,
+  .ant-input-affix-wrapper-lg,
+  .ant-select-lg.ant-select-single .ant-select-selector,
+  .react-tel-input .form-control {
+    font-size: $font-size-md;
+  }
+}
+
+@include media(xxs) {
+  font-size: $font-size-sm;
+  .dashboard-notifications .notifications-item-title {
+    white-space: normal;
+  }
+  .ant-table-wrapper .ant-table {
+    font-size: $font-size-sm;
+  }
+
+  .widget-header-title {
+    font-size: $font-size;
+  }
+  .ant-btn {
+    font-size: $font-size-md;
+  }
+  .ant-btn-sm {
+    font-size: $font-size-sm;
+  }
+
+  .balance-card,
+  .carousel-info {
+    font-size: $font-size-sm;
+  }
+}

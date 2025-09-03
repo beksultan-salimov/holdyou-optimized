@@ -1,0 +1,47 @@
+.modal-task {
+  &-header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 30px;
+
+    .info-item {
+      max-width: 50%;
+      padding-right: 20px;
+    }
+  }
+  &-body {
+    border-top: $border-base;
+    padding-top: 30px;
+
+    .title {
+      margin-bottom: 1em;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+  }
+  .ant-modal-header {
+    padding-left: 0;
+  }
+
+  @include maxW(420) {
+    .field-status {
+      .ant-radio-wrapper {
+        display: flex;
+      }
+    }
+  }
+
+  @include media(xs) {
+    &-header {
+      flex-wrap: wrap;
+      .info-item {
+        flex: 1 0 100%;
+        max-width: 100%;
+        & + .info-item {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

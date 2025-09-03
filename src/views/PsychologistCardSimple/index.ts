@@ -1,0 +1,1 @@
+export { PsychologistCardSimple } from './PsychologistCardSimple';

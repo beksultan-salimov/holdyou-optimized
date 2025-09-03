@@ -1,0 +1,1 @@
+export { ConsultationTypes } from './ConsultationTypes'

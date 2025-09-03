@@ -1,0 +1,21 @@
+import { createField } from './BaseForm';
+import { PhoneInput } from '../Fields/PhoneInput';
+import { Textarea } from '../Fields/Textarea';
+import { Input } from '../Fields/Input';
+import { InputPassword } from '../Fields/InputPassword';
+import { Checkbox } from '../Fields/Checkbox';
+import { Select } from '../Select';
+import { Switch } from '../Switch';
+import { BubbleSelect } from '../Fields/BubbleSelect';
+import { RadioGroup } from '../Fields/RadioGroup';
+
+export const FormInput = createField(Input, 'input');
+export const FormTextarea = createField(Textarea, 'textarea');
+export const FormCheckbox = createField(Checkbox, 'checkbox');
+export const FormSelect = createField(Select, 'select');
+export const FormBubbleSelect = createField(BubbleSelect, 'checkbox');
+export const FormInputPassword = createField(InputPassword, 'password');
+export const FormPhoneInput = createField(PhoneInput, 'phone');
+// export const FormSwitch = createField(Switch, 'switch');
+export const FormRadioGroup = createField(RadioGroup, 'radiogroup');
+// export const FormCheckboxGroup = createField(CheckboxGroup, 'checkboxgroup');

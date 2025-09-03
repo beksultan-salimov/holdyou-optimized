@@ -1,0 +1,100 @@
+@import '@/static/scss/base/constants.scss';
+@import '@/static/scss/base/media.scss';
+
+.consultation-types-item {
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+  font-size: 19px;
+  transition: border-color 0.25s ease;
+
+  &:nth-last-child(1) {
+    margin-bottom: 0;
+  }
+  &-label {
+    margin-right: 14px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .radio-icon {
+    border: 1px solid #d9d9d9;
+    border-radius: 50%;
+    font-size: 28px;
+    height: 1em;
+    width: 1em;
+    flex: 0 0 1em;
+    margin-right: 13px;
+    position: relative;
+
+    &::after {
+      content: "";
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 0.58em;
+      width: 0.58em;
+      background-color: $color-primary;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+  }
+  .badge-count {
+    font-size: 0.85em;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 14px;
+    border-radius: 15px;
+    background-color: #ecf7f8;
+    border: 1px solid $color-primary;
+    color: inherit;
+    white-space: nowrap;
+    transition: border-color 0.25s ease, background-color 0.25s ease,
+      color 0.25s ease;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    color: #bababa;
+
+    .badge-count {
+      background-color: #bababa;
+      border-color: #bababa;
+      color: #fff;
+    }
+  }
+  &.active {
+    border-color: $color-primary;
+    outline: 1px solid $color-primary;
+    .badge-count {
+      background-color: $color-primary;
+      border-color: $color-primary;
+      color: #fff;
+    }
+    .radio-icon {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &:hover {
+    border-color: $color-primary;
+  }
+
+  @include media(sm) {
+    font-size: 16px;
+
+    .badge-count {
+      margin-left: auto;
+    }
+  }
+}

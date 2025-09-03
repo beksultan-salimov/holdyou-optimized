@@ -1,0 +1,96 @@
+@import '@/static/scss/base/media.scss';
+
+.hiw-main {
+  margin-top: 40px;
+  margin-bottom: 80px;
+
+  &__title {
+    margin-bottom: 1em;
+  }
+  .content-block {
+    align-items: flex-start;
+    font-size: 18px;
+    .title {
+      margin-bottom: 1.4em;
+    }
+  }
+
+  @include media(md) {
+    margin-top: 0;
+    .content-block {
+      font-size: 16px;
+      .title {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+.hiw-steps {
+  margin-bottom: 160px;
+
+  &__title {
+    margin-bottom: 1.35em;
+  }
+
+  @include media(md) {
+    margin-bottom: 80px;
+  }
+}
+
+.hiw-choice {
+  margin-bottom: 120px;
+
+  &-accent {
+    color: var(--color-primary-old);
+    display: inline-block;
+    font-weight: 700;
+    margin-right: 8px;
+  }
+  &-cta {
+    font-size: 20px;
+    width: 265px;
+    margin-top: 75px;
+  }
+
+  .content-block {
+    li {
+      font-family: var(--font-blog);
+      font-size: 18px;
+      margin-bottom: 1em;
+    }
+  }
+
+  @include media(md) {
+    margin-bottom: 80px;
+  }
+  @include media(900) {
+    &-cta {
+      margin-top: 35px;
+      width: auto;
+    }
+  }
+  @include media(sm) {
+    .content-block {
+      &__col-media {
+        display: none;
+      }
+      .title {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.hiw-dont {
+  margin-bottom: 60px;
+
+  &__title {
+    margin-bottom: 0.75em;
+  }
+
+  @include media(md) {
+    margin-bottom: 20px;
+  }
+}

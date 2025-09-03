@@ -1,0 +1,62 @@
+@import '@/static/scss/base/media.scss';
+
+.no-work {
+  color: var(--color-text);
+  font-family: var(--font-cera);
+  font-size: 16px;
+  &__title {
+    display: block;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 1.55em;
+    strong {
+      color: var(--color-primary-old);
+    }
+  }
+  &__items {
+    li {
+      font-family: var(--font-blog);
+      margin-bottom: 1.5em;
+      padding-left: 2em;
+      position: relative;
+      line-height: 1.25;
+      &:nth-last-child(1) {
+        margin-bottom: 0;
+      }
+      &::before,
+      &::after {
+        box-sizing: border-box;
+        content: '';
+        display: block;
+        position: absolute;
+        color: var(--color-primary-old);
+      }
+      &::before {
+        border: 2px solid currentColor;
+        border-radius: 50%;
+        height: 16px;
+        left: 0;
+        top: 2px;
+        width: 16px;
+      }
+      &::after {
+        background: currentColor;
+        height: 2px;
+        left: 4px;
+        top: 9px;
+        width: 8px;
+      }
+    }
+  }
+
+  @include media(900) {
+    &__title {
+      font-size: 20px;
+    }
+  }
+  @include media(xs) {
+    &__title {
+      text-align: center;
+    }
+  }
+}

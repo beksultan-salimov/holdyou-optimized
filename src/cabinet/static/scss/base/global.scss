@@ -1,0 +1,212 @@
+@use "sass:math";
+
+.cabinet-layout {
+  background: #ecf7f8;
+  min-height: 100vh;
+  width: 100%;
+}
+.simple-layout {
+  min-height: 100vh;
+  width: 100%;
+
+  &-container {
+    max-width: 1260px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+  }
+
+  &-main {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  @include media(sm) {
+    &-main {
+      padding-top: 35px;
+      padding-bottom: 35px;
+    }
+  }
+}
+
+.cabinet {
+  font-family: $font-family;
+  font-size: $font-size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  code {
+    font-family: $font-family-mono;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  @include media(sm) {
+    font-size: 15px;
+  }
+}
+
+/**-------------------------------
+  * page
+  *-----------------------------*/
+.page-pagination {
+  margin-top: 20px;
+}
+.page-header {
+  margin-bottom: 30px;
+  @include media(900) {
+    margin-bottom: 20px;
+  }
+}
+
+/**-------------------------------
+  * copy-item-promocode
+  *-----------------------------*/
+.copy-item-promocode {
+  .copy-item-label {
+    font-weight: 700;
+  }
+}
+
+/**-------------------------------
+  * fields-row
+  *-----------------------------*/
+.fields-row {
+  $offsets-x: 12, 16, 18, 24;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  @for $i from 1 through 4 {
+    &.cols-#{$i} {
+      & > .form-field,
+      & > .form-item,
+      & > .ant-form-item,
+      & > .field-form {
+        flex-basis: math.div(100%, $i);
+        max-width: math.div(100%, $i);
+      }
+    }
+  }
+
+  & > .form-field,
+  & > .form-item,
+  & > .ant-form-item,
+  & > .field-form {
+    flex: 0 0;
+  }
+  & > .ant-form-item {
+    min-height: 55px;
+  }
+
+  &-gutter {
+    @each $x2 in $offsets-x {
+      &-#{$x2} {
+        $x: #{math.div($x2, 2)}px;
+        width: calc(100% + $x * 2);
+        margin-left: -$x;
+        & > .form-field,
+        & > .form-item,
+        & > .ant-form-item,
+        & > .field-form {
+          padding-left: $x;
+          padding-right: $x;
+        }
+      }
+    }
+  }
+
+  &--last {
+    & > .form-field,
+    & > .form-item,
+    & > .ant-form-item,
+    & > .field-form {
+      margin-bottom: 0;
+    }
+  }
+
+  @include media(xs) {
+    @for $i from 1 through 4 {
+      &.cols-#{$i} {
+        & > .form-field,
+        & > .form-item,
+        & > .ant-form-item,
+        & > .field-form {
+          flex-basis: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+button[type="submit"].ant-btn-lg {
+  padding-left: 35px;
+  padding-right: 35px;
+
+  @include media(xs) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+.rc-virtual-list-scrollbar {
+  width: 4px !important;
+  &-thumb {
+    background: #00BDC2 !important;
+  }
+}
+
+.page-404 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  flex-direction: column;
+  font-weight: 500;
+
+  &__title {
+    display: block;
+    font-size: 3em;
+    line-height: 0.5em;
+    font-weight: 700;
+  }
+}
+
+.form-footer {
+  .btn {
+    min-width: 200px;
+  }
+  @media (max-width: 360px) {
+    .btn {
+      min-width: 0;
+    }
+  }
+}
+
+.title-icon {
+  font-size: 1.15em;
+}

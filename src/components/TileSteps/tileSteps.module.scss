@@ -1,0 +1,161 @@
+@import '@/static/scss/base/media.scss';
+
+.tilestep {
+  align-items: center;
+  display: flex;
+  font-family: Bloggersans, sans-serif;
+  font-size: 18px;
+  line-height: 1.33;
+  margin-bottom: 2.1em;
+
+  &:first-child .num {
+    left: 20px;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+
+    .media {
+      justify-content: flex-start;
+      padding-left: 0;
+      padding-right: 2em;
+    }
+  }
+
+  :global(.mobile-applications-block) {
+    -webkit-column-gap: 14px;
+    column-gap: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1.35em;
+  }
+
+  @include media(sm) {
+    &:nth-child(odd) {
+      flex-direction: row;
+      .media {
+        justify-content: flex-end;
+        padding-right: 0;
+        padding-left: 2em;
+      }
+    }
+  }
+}
+
+.content {
+  flex: 1;
+  padding-left: 120px;
+  position: relative;
+}
+
+.title {
+  font-family: var(--font-cera);
+  font-size: 1.55em;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.78em;
+}
+
+.text {
+  line-height: 1.22;
+}
+
+.num {
+  color: #00e7ed;
+  font: 900 9.1em CeraPro, sans-serif;
+  left: 0;
+  line-height: 0.7;
+  opacity: 0.15;
+  position: absolute;
+  top: 0;
+}
+
+.media {
+  display: flex;
+  flex: 0 0 50%;
+  justify-content: flex-end;
+  max-width: 50%;
+  padding-left: 2em;
+}
+
+// -------------------------------------------//
+// .tilestep .tilestep--reverse {
+//   flex-direction: row-reverse;
+// }
+
+// .tilestep .tilestep--reverse .tilestep__media {
+//   justify-content: flex-start;
+//   padding-left: 0;
+//   padding-right: 2em;
+// }
+
+// .tilesteps > .tilestep:last-child,
+// .tilesteps > div:last-child .tilestep {
+//   margin-bottom: 0;
+// }
+
+@media screen and (max-width: 1024px) {
+  .tilestep {
+    font-size: 18px;
+  }
+
+  .num {
+    font-size: 6.5em;
+  }
+
+  .content {
+    padding-left: 95px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .tilestep {
+    margin-bottom: 2.5em;
+  }
+
+  .num {
+    font-size: 4em;
+  }
+
+  .tilestep:first-child .num {
+    left: 10px;
+  }
+
+  .title {
+    font-size: 1.1em;
+  }
+
+  .content {
+    padding-left: 55px;
+  }
+
+  .media {
+    flex-basis: 40%;
+    max-width: 40%;
+  }
+}
+
+@media screen and (max-width: 565px) {
+  .tilestep {
+    display: block;
+  }
+
+  .media {
+    flex-basis: 90%;
+    justify-content: flex-start !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5em;
+    max-width: 90%;
+    padding: 0 !important;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .tilestep {
+    font-size: 16px;
+  }
+}

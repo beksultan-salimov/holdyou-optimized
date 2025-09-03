@@ -1,0 +1,395 @@
+.rc-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px auto;
+  max-width: 98%;
+
+  .form-footer {
+    margin-top: 20px;
+  }
+}
+
+.rc-dialog-wrap {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+
+  &.is-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.rc-dialog-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  z-index: 1050;
+
+  &-hidden {
+    display: none;
+  }
+}
+
+.rc-dialog-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.rc-dialog-content {
+  background-color: #fff;
+  border: none;
+  border-radius: 20px;
+  position: relative;
+  outline: 0;
+}
+
+.rc-dialog-header {
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  padding: 20px 30px;
+}
+
+.rc-dialog-body {
+  padding: 20px 30px 30px;
+  position: relative;
+}
+
+.rc-dialog-footer {
+  border-radius: 0 0 20px 20px;
+  padding: 10px 20px;
+  text-align: right;
+
+  .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0;
+  }
+  .btn-group .btn + .btn {
+    margin-left: -1px;
+  }
+  .btn-block + .btn-block {
+    margin-left: 0;
+  }
+}
+
+.rc-dialog-close {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  font-size: 18px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  opacity: 0.5;
+  text-shadow: 0 1px 0 #fff;
+  text-decoration: none;
+  transition: opacity 0.25s ease, color 0.25s ease;
+  z-index: 10;
+  &-x:after {
+    content: '\d7';
+  }
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+  }
+}
+
+.rc-dialog-zoom-enter,
+.rc-dialog-zoom-appear {
+  opacity: 0;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+  animation-play-state: paused;
+}
+
+.rc-dialog-zoom-leave {
+  animation-duration: 0.15s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+  animation-play-state: paused;
+}
+
+.rc-dialog-zoom-enter.rc-dialog-zoom-enter-active,
+.rc-dialog-zoom-appear.rc-dialog-zoom-appear-active {
+  animation-name: rcDialogZoomIn;
+  animation-play-state: running;
+}
+
+.rc-dialog-zoom-leave.rc-dialog-zoom-leave-active {
+  animation-name: rcDialogZoomOut;
+  animation-play-state: running;
+}
+
+@keyframes rcDialogZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rcDialogZoomOut {
+  0% {
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+.rc-dialog-slide-fade-enter,
+.rc-dialog-slide-fade-appear {
+  transform: translateY(-25%);
+}
+
+.rc-dialog-slide-fade-enter,
+.rc-dialog-slide-fade-appear,
+.rc-dialog-slide-fade-leave {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+  animation-play-state: paused;
+}
+
+.rc-dialog-slide-fade-enter.rc-dialog-slide-fade-enter-active,
+.rc-dialog-slide-fade-appear.rc-dialog-slide-fade-appear-active {
+  animation-name: rcDialogSlideFadeIn;
+  animation-play-state: running;
+}
+
+.rc-dialog-slide-fade-leave.rc-dialog-slide-fade-leave-active {
+  animation-name: rcDialogSlideFadeOut;
+  animation-play-state: running;
+}
+
+@keyframes rcDialogSlideFadeIn {
+  0% {
+    transform: translateY(-25%);
+  }
+
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes rcDialogSlideFadeOut {
+  0% {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translateY(-25%);
+  }
+}
+
+.rc-dialog-fade-enter,
+.rc-dialog-fade-appear {
+  opacity: 0;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  animation-play-state: paused;
+}
+
+.rc-dialog-fade-leave {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  animation-play-state: paused;
+}
+
+.rc-dialog-fade-enter.rc-dialog-fade-enter-active,
+.rc-dialog-fade-appear.rc-dialog-fade-appear-active {
+  animation-name: rcDialogFadeIn;
+  animation-play-state: running;
+}
+
+.rc-dialog-fade-leave.rc-dialog-fade-leave-active {
+  animation-name: rcDialogFadeOut;
+  animation-play-state: running;
+}
+
+@keyframes rcDialogFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rcDialogFadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+/**-------------------------------
+  * modal-type-custom
+  *-----------------------------*/
+.modal-type-custom {
+  .rc-dialog-content {
+    padding: 0;
+  }
+  .rc-dialog-header {
+    border-radius: 20px 20px 0 0;
+    margin-bottom: 0;
+    min-height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 50px;
+    text-align: center;
+  }
+  .rc-dialog-body {
+    background-color: #ecf7f8;
+    border-radius: 0 0 20px 20px;
+    padding: 50px;
+  }
+  .modal-subtitle {
+    line-height: 1.4;
+    margin: -20px auto 25px;
+  }
+
+  @media (max-width: 767px) {
+    .rc-dialog-body {
+      padding: 20px;
+    }
+  }
+}
+
+/**-------------------------------
+  * modal-type-video
+  *-----------------------------*/
+.modal-type-video {
+  width: auto !important;
+  .rc-dialog-content {
+    background-color: transparent;
+    border-radius: 24px;
+    padding: 0;
+    height: 100%;
+  }
+  .rc-dialog-body {
+    background-color: transparent;
+    border-radius: 24px;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .rc-dialog-content {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .rc-dialog-close {
+    font-size: 14px;
+    top: 5px;
+    right: 0;
+    color: #fff;
+    opacity: 1;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  .video-player {
+    border-radius: 24px;
+    max-height: 98vh;
+    max-width: calc(100vw - 100px);
+    &-empty {
+      background: #f9f9f9;
+      height: 100%;
+      width: 100%;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 1110px) {
+    .rc-dialog-close {
+      font-size: 16px;
+      top: 20px;
+      right: 20px;
+      position: fixed;
+      opacity: 0.75;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .rc-dialog-content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .video-player {
+      max-width: 98vw;
+    }
+  }
+}
+
+/**-------------------------------
+  * modal-type-gallery
+  *-----------------------------*/
+.modal-type-gallery {
+  max-height: 98vh;
+  .rc-dialog-content {
+    background-color: transparent;
+    border-radius: 24px;
+    padding: 0;
+    height: 100%;
+  }
+  .rc-dialog-body {
+    background-color: transparent;
+    border-radius: 24px;
+    padding: 0;
+    height: 100%;
+  }
+  .rc-dialog-close {
+    font-size: 18px;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    opacity: 1;
+    position: fixed;
+    .anticon {
+      opacity: 0;
+      animation: 0.5s ease 1s fadeUp forwards;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

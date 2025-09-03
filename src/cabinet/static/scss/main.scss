@@ -1,0 +1,59 @@
+/**-------------------------------
+  * Base
+  *-----------------------------*/
+@import './base/constants';
+@import '@/static/scss/base/mixins.scss';
+@import '@/static/scss/base/media.scss';
+@import './base/global';
+
+/**
+ * @deprecated ZoomModal should not be used
+ */
+// @import './views/modal-zoom';
+
+
+.cabinet {
+  @import './base/custom-antd'; // TODO need remove?
+
+/**-------------------------------
+  * views
+  *-----------------------------*/
+  // @import './views/title';
+  // @import './views/phone-input';
+  @import './views/avatar';
+  @import './views/notifications';
+  @import './views/widget';
+  @import './views/balance';
+  // @import './views/modal';
+  @import './views/info-item';
+  @import './views/task-item';
+  @import './views/carousel';
+  @import './views/sidebar';
+  @import './views/copy-item';
+  @import './views/empty-card';
+  @import './views/modal-confirm';
+  @import './views/modal-task';
+  @import './views/header';
+  @import './views/cabinet';
+  @import './views/dropzone-images';
+  @import './views/info-message'; // TODO: move to InfoMessage.tsx
+  // @import './views/scheduler'; // TODO: move to Scheduler.tsx
+  @import './views/consultation-types'; // TODO: move to ConsultaionTypes.tsx
+  @import './views/modal-checkout-success'; // TODO: move to CheckoutSuccessModal.tsx
+  @import './views/spinner'; // TODO: move to Spinner.tsx
+  @import './views/activate-card';
+
+/**-------------------------------
+  * pages
+  *-----------------------------*/
+  // @import './pages/dashboard'; //TODO
+  @import './pages/shop';
+  @import './pages/profile';
+  @import './pages/dashboard';
+  @import './pages/history';
+
+/**-------------------------------
+  * index
+  *-----------------------------*/
+  // @import './base/index';
+}

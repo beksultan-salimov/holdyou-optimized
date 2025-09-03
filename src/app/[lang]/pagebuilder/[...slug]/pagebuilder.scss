@@ -1,0 +1,14 @@
+.page-pagebuilder {
+  position: relative;
+  flex: 1;
+}
+.pb-open {
+  & > header,
+  & > footer {
+    display: none !important;
+  }
+}
+
+.cke_notifications_area {
+  display: none !important;
+}

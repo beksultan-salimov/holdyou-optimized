@@ -1,0 +1,129 @@
+@import '@/static/scss/base/media.scss';
+
+.junior-board {
+  background: #e8ffff;
+  padding: 70px 30px;
+  width: 1030px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.3;
+  position: relative;
+  margin-top: 90px;
+
+  &::before,
+  &::after {
+    content: '';
+    background: #00d2d7;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 7px;
+  }
+  &::before {
+    left: 0;
+    border-radius: 7px 0 0 7px;
+  }
+  &::after {
+    content: '';
+    background: #00d2d7;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 7px;
+    border-radius: 0 7px 7px 0;
+  }
+
+  &__inner {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 610px;
+  }
+  &__title {
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+
+    span > span {
+      color: var(--color-primary-old);
+    }
+  }
+  &__description {
+    font-size: 23px;
+    margin-bottom: 25px;
+  }
+  &__logo {
+    background-color: var(--color-primary-old);
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__btn-next {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary-old);
+    background-image: url('/img/icons/double-arrow-down.svg');
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 10px;
+  }
+
+  .psh-avatars-group {
+    margin-bottom: 30px;
+    justify-content: center;
+
+    &__item {
+      border-color: #e8ffff;
+    }
+  }
+
+  @include media(md) {
+    font-size: 17px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    &__description {
+      font-size: 18px;
+    }
+    &__logo {
+      border-radius: 15px;
+      height: 62px;
+      width: 62px;
+
+      img {
+        width: 38px;
+        height: 31px;
+      }
+    }
+    &__btn-next {
+      height: 38px;
+      width: 38px;
+    }
+  }
+
+  @include media(sm) {
+    margin-top: 50px;
+
+    &__description,
+    .psh-avatars-group {
+      margin-bottom: 20px;
+    }
+  }
+}

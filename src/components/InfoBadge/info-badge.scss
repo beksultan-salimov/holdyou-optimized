@@ -1,0 +1,79 @@
+@import '@/static/scss/base/media.scss';
+
+.info-badge {
+  $c: &;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  display: block;
+
+  &__inner {
+    border-radius: 5px;
+    padding: 8px 10px;
+    display: inline-flex;
+    align-items: center;
+  }
+  &__icon {
+    font-size: 1.11em;
+    margin-right: 10px;
+  }
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__label {
+    padding-right: 8px;
+  }
+  &__value {
+    &.is-underline {
+      text-decoration: underline;
+    }
+  }
+
+  &.is-center {
+    text-align: center;
+  }
+  &--default {
+    #{$c} {
+      &__inner {
+        background-color: #f1f1f1;
+      }
+    }
+  }
+  &--primary {
+    #{$c} {
+      &__inner {
+        background-color: #e8ffff;
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  @include media(sm) {
+    font-size: 16px;
+  }
+
+  @include media(450) {
+    &__inner {
+      flex-direction: row-reverse;
+    }
+    &__icon {
+      margin-right: 0;
+      margin-left: 10px;
+    }
+  }
+}
+
+.info-badge-nearest-value {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.info-badge-nearest-link {
+  cursor: pointer;
+  transition: color 0.25s ease;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}

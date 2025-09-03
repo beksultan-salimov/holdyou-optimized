@@ -1,0 +1,15 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+}
+.item {
+  flex: 0 0 49%;
+}
+
+@media (max-width: 576px) {
+  .item {
+    flex: 1 0 100%;
+  }
+}

@@ -1,0 +1,71 @@
+.modal-checkout-success {
+  color: $color-text;
+  font-size: 18px;
+
+  .modal-header {
+    &-icon {
+      width: 146px;
+      height: 90px;
+      margin: 10px auto 20px;
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    &-title {
+      text-align: center;
+      font-weight: 700;
+    }
+  }
+
+  .order-resume {
+    display: flex;
+    &-media {
+      flex: 0 0 40%;
+      max-width: 40%;
+    }
+    &-content {
+      flex: 1;
+      max-width: 60%;
+      padding-left: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .info-item {
+      &-label {
+        font-weight: 700;
+        color: inherit;
+      }
+      &-text {
+        font-weight: 400;
+      }
+    }
+  }
+
+  .media-square {
+    background-color: $image-bg-color;
+    @include media-square;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .ps-message {
+    background-color: #ecf7f8;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    margin-top: 40px;
+
+    p {
+      font-family: $font-family-secondary;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .btn,
+    .ant-btn {
+      font-weight: 700;
+      width: 270px;
+    }
+  }
+}

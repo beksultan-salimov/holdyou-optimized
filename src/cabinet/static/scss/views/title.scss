@@ -1,0 +1,81 @@
+// TODO not used
+.title {
+  font-family: CeraPro, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1;
+  display: flex;
+  align-items: flex-start;
+
+  &-small {
+    font-size: 16px;
+  }
+  &-middle {
+    font-size: 19px;
+  }
+  &-large {
+    font-size: 30px;
+  }
+  &-xlarge {
+    font-size: 64px;
+  }
+  &-icon {
+    font-size: 1.15em;
+    margin-right: 0.5em;
+    position: relative;
+    top: -0.025em;
+  }
+  &-label {
+    padding-right: 10px;
+    line-height: 1.1;
+  }
+  &-extra {
+    color: $color-secondary;
+    font-size: 0.85em;
+    font-weight: 400;
+    padding-top: 0.15em;
+    line-height: 1.1;
+  }
+  &-center {
+    justify-content: center;
+  }
+
+  @include media(lg) {
+    &-large {
+      font-size: 24px;
+    }
+    &-xlarge {
+      font-size: 48px;
+    }
+  }
+  @include media(md) {
+    &-small {
+      font-size: 14px;
+    }
+    &-middle {
+      font-size: 17px;
+    }
+    &-large {
+      font-size: 22px;
+    }
+    &-xlarge {
+      font-size: 42px;
+    }
+  }
+  @include media(sm) {
+    &-large {
+      font-size: 19px;
+    }
+    &-xlarge {
+      font-size: 30px;
+    }
+  }
+  @include media(xxs) {
+    &-large {
+      font-size: 17px;
+    }
+    &-xlarge {
+      font-size: 24px;
+    }
+  }
+}

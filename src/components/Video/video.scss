@@ -1,0 +1,54 @@
+@import '@/static/scss/base/media.scss';
+
+.video-box {
+  $c: &;
+  position: relative;
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 16px;
+    transition: opacity 0.35s ease;
+
+    .btn {
+      font-size: 16px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  &__video {
+    border-radius: 16px;
+    display: block;
+    width: 100%;
+  }
+  &.is-start {
+    #{$c} {
+      &__overlay {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+  @media (orientation: portrait) {
+    &__video {
+      max-height: calc(100vh - 100px);
+    }
+  }
+  @media (orientation: landscape) {
+    &__video {
+      max-height: 400px;
+    }
+  }
+  @media (max-width: 1000px) and (orientation: landscape) {
+    &__video {
+      max-height: 300px;
+    }
+  }
+}

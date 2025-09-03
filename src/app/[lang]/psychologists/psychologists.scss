@@ -1,0 +1,97 @@
+@import '@/static/scss/base/media.scss';
+
+.page-psychologists {
+  &__title {
+    margin-bottom: 25px;
+  }
+  .breadcrumbs {
+    margin-top: 0;
+  }
+}
+
+.page-psychologists-main {
+  padding-top: 50px;
+  padding-bottom: 70px;
+  @include media(lg) {
+    padding-bottom: 50px;
+  }
+  @include media(md) {
+    padding-bottom: 30px;
+  }
+}
+
+.page-psychologists-blog {
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 100px;
+  padding-bottom: 100px;
+  &__title {
+    letter-spacing: -0.03em;
+    margin: 0 auto 45px;
+    width: 80%;
+  }
+
+  @include media(lg) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @include media(sm) {
+    &__title {
+      font-size: 32px;
+      margin-bottom: 25px;
+      width: 100%;
+    }
+  }
+}
+
+.page-psychologists-prices {
+  background-color: #e8ffff;
+  padding-top: 100px;
+  padding-bottom: 120px;
+  &__title {
+    margin-bottom: 0.2em;
+  }
+  &__subtitle {
+    font-size: 22px;
+    text-align: center;
+  }
+  .tariffs {
+    margin-top: 75px;
+  }
+  .tariffs--accent .tariff-card {
+    background-color: #fff !important;
+  }
+
+  @include media(lg) {
+    padding-top: 50px;
+    padding-bottom: 90px;
+  }
+  @include media(sm) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    &__title {
+      font-size: 32px;
+    }
+    &__subtitle {
+      font-size: 18px;
+    }
+    .tariffs {
+      margin-top: 50px;
+    }
+  }
+}
+
+.page-psychologists-feedback {
+  padding-top: 90px;
+  @include media(lg) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.pagination-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}

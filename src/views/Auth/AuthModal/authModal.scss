@@ -1,0 +1,149 @@
+@import '@/static/scss/base/media';
+
+.modal-auth {
+  &.rc-dialog {
+    .rc-dialog-header,
+    .rc-dialog-title {
+      padding: 0;
+    }
+  }
+  .auth-nav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    &-item {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      margin: 0 20px;
+      opacity: 1 !important;
+      position: relative;
+      height: 84px;
+      user-select: none;
+
+      &::after {
+        background-color: currentColor;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 5px;
+        left: 0;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        transition: opacity 0.3s ease;
+        width: 100%;
+      }
+
+      &.active {
+        color: var(--color-primary);
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+  .form-footer {
+    .btn {
+      font-size: 22px;
+      width: 100%;
+    }
+  }
+}
+
+.field-age-confirm {
+  font-family: var(--font-cera);
+  font-size: 12px;
+  line-height: 1.25;
+  margin-top: 20px;
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+      opacity: 0.6;
+    }
+  }
+}
+
+.forgot-password {
+  font-size: 16px;
+  line-height: 1;
+  padding-left: 30px;
+  position: relative;
+  margin-top: 30px;
+  display: block;
+  &::before {
+    content: url('/img/lock.svg');
+    left: 0;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+
+/**-------------------------------
+  * modal-forgot-password
+  *-----------------------------*/
+.modal-forgot-password {
+  .subtitle {
+    line-height: 1.4;
+    max-width: 280px;
+    margin: -20px auto 25px;
+  }
+}
+
+/**-------------------------------
+  * modal-register-confirm
+  *-----------------------------*/
+.modal-register-confirm {
+  .subtitle {
+    line-height: 1.4;
+    max-width: 280px;
+    margin: -20px auto 25px;
+  }
+  .form-prefooter {
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .field-sms {
+    display: flex;
+    width: 250px;
+    margin: 0 auto;
+    justify-content: space-between;
+    .form-field,
+    .field {
+      width: 50px;
+      height: 50px;
+    }
+    input {
+      padding: 0 5px;
+      text-align: center;
+    }
+  }
+}
+
+/**-------------------------------
+  * prelogin
+  *-----------------------------*/
+.prelogin {
+  &__body {
+    margin-bottom: 24px;
+    line-height: 1.35;
+    p {
+      margin-bottom: 10px;
+      &.align-right {
+        text-align: right;
+      }
+    }
+  }
+}

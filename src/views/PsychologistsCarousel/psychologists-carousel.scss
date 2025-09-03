@@ -1,0 +1,80 @@
+.psychologists-carousel {
+  width: calc(100% - 60px);
+  margin-left: auto;
+  margin-right: auto;
+
+  .slick-next {
+    right: -30px;
+  }
+  .slick-prev {
+    left: -30px;
+  }
+}
+.psychologists-carousel-item {
+  padding: 0 10px;
+}
+.psychologists-carousel-card {
+  text-align: center;
+  &__link {
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  &__media {
+    position: relative;
+    padding-bottom: 100%;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 6px 6px 0 0;
+    }
+  }
+  &__body {
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 0 0 6px 6px;
+    display: flex;
+    flex-direction: column;
+    min-height: 75px;
+    padding: 10px;
+    line-height: 1.15;
+    font-size: 12px;
+  }
+  &__name {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  &__footer {
+    margin-top: 15px;
+    text-align: center;
+    .btn {
+      font-size: 16px;
+      border-radius: 10px;
+      height: 45px;
+      max-width: 100%;
+      width: 180px;
+    }
+  }
+}
+@media (max-width: 520px) {
+  .psychologists-carousel {
+    width: 290px;
+
+    .slick-list {
+      overflow: visible;
+    }
+  }
+  .psychologists-carousel-item {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .psychologists-carousel-card {
+    width: 270px;
+  }
+}

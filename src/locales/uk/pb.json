@@ -1,0 +1,20 @@
+{
+  "pb": {
+    "btn_undo": "Відмінити попередню дію",
+    "btn_redo": "Повернути попередню дію",
+    "btn_save": "Зберегти",
+    "btn_clear": "Очистити",
+    "btn_preview": "Переглянути",
+    "btn_exit": "Вийти",
+    "block_info_left": "Секція 1",
+    "block_info_right": "Секція 2",
+    "block_text": "Текст",
+    "block_image": "Зображення",
+    "block_image_without_shadow": "Зображення без тіні",
+    "save_success": "Зміни на сторінці успішно збережені",
+    "categories": {
+      "titles": "Заголовки",
+      "basic": "Основні"
+    }
+  }
+}

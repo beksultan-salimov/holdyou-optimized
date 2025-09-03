@@ -1,0 +1,150 @@
+@import '@/static/scss/base/media';
+
+.page-offline-order {
+  padding-top: 70px;
+  padding-bottom: 100px;
+
+  @include media(md) {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+}
+
+.offline-order {
+  display: flex;
+  margin-top: 40px;
+
+  &-col-sidebar {
+    flex: 0 0 340px;
+  }
+  &-col-content {
+    padding-left: 40px;
+    flex: 1;
+  }
+  &-form {
+    margin-bottom: 40px;
+    &__title {
+      margin-bottom: 10px;
+    }
+    &__form {
+      margin-top: 26px;
+    }
+    .inputs {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+
+      .form-field {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &-map {
+    &__title {
+      margin-bottom: 26px;
+
+      .anticon {
+        font-size: 18px;
+        color: var(--color-primary);
+        margin-right: 10px;
+      }
+    }
+    &__map {
+      background: #d9d9d9;
+      border-radius: 20px;
+      flex: 1;
+      height: 450px;
+      overflow: hidden;
+    }
+  }
+
+  .psh-card__footer {
+    display: none;
+  }
+
+  @include media(900) {
+    &-form {
+      .inputs {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+  }
+
+  @include media(sm) {
+    &-col-sidebar {
+      flex-basis: 40%;
+    }
+  }
+
+  @include media(xs) {
+    display: block;
+
+    &-col-sidebar {
+      margin-bottom: 32px;
+    }
+    &-col-content {
+      padding-left: 0;
+    }
+
+    .psh-card__body,
+    .psh-card__header::after,
+    .psh-card__badges-bottom,
+    .psh-card__badges-top {
+      display: none;
+    }
+
+    .psh-card {
+      &--simple {
+        font-size: 15px;
+        flex-direction: row;
+        .psh-card {
+          &__header {
+            padding-bottom: 0;
+          }
+          &__media {
+            border-radius: 10px;
+            height: 100px;
+            width: 100px;
+            padding: 0;
+          }
+          &__content {
+            justify-content: center;
+            display: flex;
+            flex: 1;
+            max-width: calc(100% - 100px);
+            padding: 0 0 0 24px;
+          }
+          &__name {
+            font-size: 19px;
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+
+    .text {
+      font-size: 16px;
+    }
+
+    &-map {
+      &__title {
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+
+        .anticon {
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          margin: 15px 0;
+        }
+      }
+
+      &__map {
+        height: 280px;
+      }
+    }
+  }
+}

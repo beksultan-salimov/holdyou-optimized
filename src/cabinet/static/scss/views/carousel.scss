@@ -1,0 +1,83 @@
+.carousel {
+  $footer-gap: 30px;
+  &-items {
+    padding-bottom: $footer-gap;
+  }
+  &-footer {
+    display: flex;
+    align-items: center;
+    padding-top: $footer-gap;
+    position: relative;
+    margin-top: auto;
+
+    &::after {
+      content: "";
+      height: 1px;
+      border-top: $border-base;
+      width: calc(100% + $footer-gap * 2);
+      position: absolute;
+      left: -$footer-gap;
+      top: 0;
+      right: 0;
+    }
+  }
+  &-info {
+    color: $color-secondary;
+    font-size: 14px;
+    margin-left: auto;
+  }
+  &-actions {
+    display: flex;
+  }
+  &-btn {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    background-color: #ECF7F8;
+    color: $color-text;
+    border: none;
+    padding: 0;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-size: 8px !important;
+
+    &:disabled {
+      color: $color-secondary;
+    }
+
+    &::after {
+      content: "";
+      height: 1em;
+      width: 1em;
+      border: 1px solid currentColor;
+      transform: rotate(45deg);
+      position: relative;
+    }
+
+    &-prev {
+      &::after {
+        border-right: 0;
+        border-top: 0;
+        left: .25em;
+      }
+    }
+    &-next {
+      &::after {
+        border-left: 0;
+        border-bottom: 0;
+        left: -.25em;
+      }
+    }
+  }
+
+  @include media(lg) {
+    &-footer {
+      padding-top: 20px;
+      &::after {
+        left: -20px;
+        width: calc(100% + 40px);
+      }
+    }
+  }
+}

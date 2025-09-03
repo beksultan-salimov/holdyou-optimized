@@ -1,0 +1,201 @@
+@import '@/static/scss/base/media.scss';
+
+$flash-card-radius: 32px;
+.flash-card {
+  background-color: #fff;
+  color: #3a2d1e;
+  box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.1);
+  border-radius: $flash-card-radius;
+  line-height: 1.35;
+  font-weight: 500;
+  position: relative;
+
+  &__wrapper {
+    padding-top: 100px;
+    padding-bottom: 70px;
+    width: 1360px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: 510px;
+  }
+  &__media {
+    background-size: cover;
+    background-position: center center;
+    clip-path: url(#waveMask1);
+    -webkit-clip-path: url(#waveMask1);
+    flex: 0 0 46%;
+    border-top-left-radius: $flash-card-radius;
+    border-bottom-left-radius: $flash-card-radius;
+  }
+  &__content {
+    flex: 1;
+    max-width: (100% - 46%);
+    padding: 80px 80px 60px 60px;
+
+    p {
+      margin-bottom: 12px;
+    }
+  }
+  &__title {
+    font-family: var(--font-cera);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.6em;
+
+    & > span {
+      display: block;
+      font-size: 1.375em;
+      line-height: 1;
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+  }
+  &__cta-btn {
+    border-radius: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 64px;
+
+    .btn__label + .anticon {
+      font-size: 1.35em;
+      margin-right: 0;
+      margin-left: 50px;
+    }
+  }
+
+  &__heart {
+    position: absolute;
+    max-width: none;
+    pointer-events: none;
+    transition: transform 0.1s ease-out;
+
+    &--pink {
+      filter: drop-shadow(0px 28px 28px rgba(64, 64, 64, 0.13))
+        drop-shadow(0px 7px 15px rgba(64, 64, 64, 0.15));
+      bottom: -50px;
+      left: 38%;
+      transform-origin: center top;
+    }
+    &--green {
+      filter: drop-shadow(0px 25px 25px rgba(78, 14, 23, 0.15));
+      top: -70px;
+      right: 5px;
+      transform-origin: center bottom;
+    }
+  }
+  .color-pink {
+    color: #ff607b;
+  }
+
+  @include media(lg) {
+    font-size: 16px;
+    &__inner {
+      min-height: auto;
+    }
+    &__title {
+      font-size: 30px;
+      margin-bottom: 1em;
+      & > span {
+        font-size: inherit;
+      }
+    }
+    &__heart {
+      &--pink {
+        width: 100px;
+      }
+      &--green {
+        width: 110px;
+        top: -40px;
+      }
+    }
+  }
+  @include media(md) {
+    &__wrapper {
+      padding-top: 60px;
+      padding-bottom: 50px;
+    }
+    &__content {
+      padding: 40px;
+    }
+  }
+  @include media(sm) {
+    &__inner {
+      display: block;
+    }
+    &__media,
+    &__content {
+      max-width: 100%;
+      width: 100%;
+    }
+    &__media {
+      height: 420px;
+      clip-path: url(#waveMask2);
+      -webkit-clip-path: url(#waveMask2);
+      border-radius: 0;
+      border-bottom-left-radius: 32px;
+      border-bottom-right-radius: 32px;
+    }
+    &__cta-btn {
+      font-size: 16px;
+      height: 48px;
+    }
+    &__footer {
+      justify-content: flex-start;
+    }
+    &__cta-btn {
+      &.btn {
+        background-color: var(--color-accent-hover);
+        border-color: var(--color-accent-hover);
+        box-shadow: 0px 15px 30px rgba(255, 96, 123, 0.25);
+      }
+    }
+  }
+  @media (max-width: 767px) and (min-width: 576px) {
+    &__media {
+      display: none;
+    }
+    &__heart {
+      &--pink {
+        left: 60%;
+      }
+      &--green {
+        width: 90px;
+      }
+    }
+  }
+  @include media(xs) {
+    &__content {
+      padding: 40px 30px 20px;
+    }
+    &__heart {
+      &--pink {
+        left: 60%;
+        width: 120px;
+      }
+      &--green {
+        top: -35px;
+        right: 40px;
+        width: 80px;
+      }
+    }
+  }
+  @include media(450) {
+    &__cta-btn {
+      width: 100%;
+      justify-content: space-between;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}

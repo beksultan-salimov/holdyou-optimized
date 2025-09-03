@@ -1,0 +1,38 @@
+// @DEPRECATED: unused
+.reviews-carousel-item {
+  padding: 0 10px;
+}
+.reviews-carousel-card {
+  background: var(--color-primary);
+  border-radius: 6px;
+  min-height: 361px;
+  padding: 30px 30px 84px;
+  position: relative;
+  width: 100%;
+  color: #fff;
+
+  &__wrapper {
+    max-height: 250px;
+    overflow: hidden;
+  }
+
+  &__text {
+    font: 16px CeraPro, sans-serif;
+    line-height: 24px;
+    padding: 6px 7px 0;
+    max-height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-right: 30px;
+    width: calc(100% + 30px);
+  }
+
+  &__footer {
+    align-items: center;
+    bottom: 30px;
+    display: flex;
+    left: 33px;
+    position: absolute;
+    right: 30px;
+  }
+}

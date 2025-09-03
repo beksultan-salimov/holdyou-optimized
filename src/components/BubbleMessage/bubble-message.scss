@@ -1,0 +1,59 @@
+/**-------------------------------
+  * bubble-message
+  *-----------------------------*/
+.bubble-message {
+  $c: &;
+
+  display: flex;
+  justify-content: center;
+  &__inner {
+    background: var(--color-primary-old);
+    color: #fff;
+    border-radius: 60px;
+    padding: 10px 30px;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    min-height: 54px;
+    text-align: center;
+    line-height: 1.2;
+
+    &.arrow-bottom-center,
+    &.arrow-top-center {
+      &::after {
+        content: '';
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        position: absolute;
+        left: 50%;
+      }
+    }
+    &.arrow-bottom-center {
+      &::after {
+        border-width: 10px 8.5px 0 8.5px;
+        border-color: var(--color-primary-old) transparent transparent
+          transparent;
+        bottom: 0;
+        transform: translateY(100%);
+      }
+    }
+    &.arrow-top-center {
+      &::after {
+        border-width: 0 8.5px 10px 8.5px;
+        border-color: transparent transparent var(--color-primary-old)
+          transparent;
+        top: 0;
+        transform: translateY(-100%);
+      }
+    }
+  }
+
+  .anticon {
+    font-size: 1.2em;
+    margin-right: 8px;
+  }
+}

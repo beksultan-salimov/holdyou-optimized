@@ -1,0 +1,1 @@
+export { HomeBigTxt } from "./HomeBigTxt";

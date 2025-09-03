@@ -1,0 +1,41 @@
+@import '@/static/scss/base/media.scss';
+
+.tiles {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.item {
+  background: #fff;
+  border-radius: 0.56em;
+  box-shadow: 0 20px 100px rgba(0, 210, 215, 0.1);
+  font-family: Bloggersans, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  min-height: 100%;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.icon {
+  font-size: 20px;
+  height: 1em;
+  margin: 0 auto 1em;
+  width: 1em;
+}
+
+.text {
+  line-height: 1;
+}
+
+@include media(md) {
+  .tiles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@include media(xs) {
+  .tiles {
+    grid-template-columns: 1fr;
+  }
+}

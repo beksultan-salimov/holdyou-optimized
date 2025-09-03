@@ -1,0 +1,215 @@
+@import '@/static/scss/base/media.scss';
+
+.main-services {
+  &-item {
+    padding: 37px 10px 40px;
+  }
+  &-more {
+    display: none;
+    text-align: center;
+
+    a {
+      width: 260px;
+    }
+  }
+
+  .slick-list {
+    overflow: visible;
+  }
+}
+
+@mixin accentCard {
+  background: linear-gradient(
+    to bottom,
+    rgba(212, 254, 254, 1) 0%,
+    rgba(219, 255, 255, 1) 100%
+  );
+  box-shadow: 0 20px 100px rgba(0, 210, 215, 0.1);
+  min-height: 468px;
+  position: relative;
+  top: -18px;
+  .main-services-card__inner {
+    background: linear-gradient(
+      to bottom,
+      rgb(212, 254, 254) 0%,
+      rgb(219, 255, 255) 100%
+    );
+  }
+  &::before {
+    background: url('/img/badge-star-service.png');
+    content: '';
+    display: block;
+    height: 50px;
+    left: -13px;
+    position: absolute;
+    top: -13px;
+    width: 50px;
+    z-index: 2;
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 10px;
+    background: linear-gradient(
+      to bottom,
+      rgb(0 234 239) 0%,
+      rgba(0 234 239 / 14%) 100%
+    );
+  }
+
+  .main-services-card {
+    &__link {
+      background-color: var(--color-primary-old);
+      box-shadow: 0 15px 30px rgba(0, 210, 215, 0.22);
+      color: #fff;
+      font-weight: 700;
+
+      &:hover {
+        background-color: var(--color-primary-old-hover);
+        border-color: var(--color-primary-old-hover);
+        color: #fff;
+      }
+    }
+  }
+}
+
+.main-services-card {
+  border-radius: 10px;
+  box-shadow: 0 20px 100px rgba(0, 210, 215, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: 430px;
+  text-align: center;
+  width: 100%;
+
+  &__inner {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    flex: 1;
+    z-index: 1;
+    border-radius: 8px;
+    padding: 25px;
+  }
+
+  &__title,
+  &__sessions,
+  &__price {
+    font-size: 24px;
+  }
+  &__title {
+    font-family: var(--font-cera);
+    font-weight: 500;
+    margin-bottom: 2em;
+  }
+  &__sessions,
+  &__price {
+    font-family: var(--font-blog);
+    font-weight: 700;
+    margin-bottom: 0.375em;
+  }
+  &__sessions {
+    color: var(--color-primary-old);
+  }
+  &__advantages {
+    font-family: var(--font-cera);
+    font-size: 16px;
+    list-style-type: none;
+    margin: 48px 0 10px;
+    min-height: 100px;
+    padding: 0;
+
+    li {
+      margin-bottom: 22px;
+      max-width: 250px;
+    }
+  }
+
+  &__link {
+    border: 3px solid var(--color-primary-old);
+    border-radius: 8px;
+    color: var(--color-primary-old);
+    font-family: var(--font-cera);
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 auto;
+    max-width: 330px;
+    height: 50px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      border-color: var(--color-primary-old-hover);
+      color: var(--color-primary-old-hover);
+    }
+  }
+
+  &--1 {
+    @include accentCard;
+  }
+}
+
+@include media(900) {
+  .main-services-card {
+    &__title,
+    &__sessions,
+    &__price {
+      font-size: 22px;
+    }
+  }
+}
+
+@include media(sm) {
+  .main-services {
+    &-item {
+      padding: 20px 40px 0;
+    }
+    .slick-dots {
+      margin: 30px 0 0;
+    }
+  }
+}
+
+@include media(xs) {
+  .main-services-card {
+    &--0,
+    &--2 {
+      @include accentCard;
+    }
+
+    &--0,
+    &--1,
+    &--2 {
+      top: 0;
+      &::before {
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .main-services {
+    &-more {
+      display: block;
+      margin-top: 30px;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .main-services-item {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}

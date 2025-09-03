@@ -1,0 +1,142 @@
+@use "sass:math";
+
+/**-------------------------------
+  * page-dashboard
+  *-----------------------------*/
+.page-dashboard {
+  $gap: 30px;
+  .widgets {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: math.div(-$gap, 2);
+    margin-top: math.div(-$gap, 2);
+    width: calc(100% + $gap);
+  }
+  .widget {
+    flex: 0 0 calc(50% - $gap);
+    max-width: calc(50% - $gap);
+    margin: math.div($gap, 2);
+    display: flex;
+    flex-direction: column;
+
+    &-body {
+      flex: 1;
+    }
+  }
+  .widget-balance {
+    flex: 1 0 calc(100% - 30px);
+    max-width: calc(100% - 30px);
+  }
+  .empty-card {
+    height: 100%;
+  }
+
+  .base-table,
+  .base-table-body,
+  .ant-table-wrapper,
+  .ant-spin-nested-loading,
+  .ant-spin-container,
+  .ant-table-container,
+  .ant-table-content,
+  .ant-table {
+    height: 100%;
+  }
+  .ant-table-ping-right,
+  .ant-table-ping-left {
+    height: calc(100% - $table-scroll-label-height);
+
+    .ant-table-content,
+    .ant-table-container {
+      height: 100%;
+    }
+  }
+
+  .ant-table-placeholder {
+    .ant-table-cell {
+      text-align: left;
+    }
+  }
+
+  @include maxW(1100) {
+    .widgets {
+      margin-left: 0;
+      margin-top: 0;
+      width: 100%;
+    }
+    .widget {
+      flex-basis: 100%;
+      max-width: 100%;
+      margin: 0 0 20px 0;
+
+      &:nth-last-child(1) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/**-------------------------------
+  * dashboard-notifications
+  *-----------------------------*/
+.dashboard-notifications {
+  .notifications-item-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    white-space: nowrap;
+  }
+}
+
+/**-------------------------------
+  * dashboard-sessions
+  *-----------------------------*/
+.dashboard-sessions {
+  .ant-table-cell {
+    vertical-align: middle;
+  }
+}
+
+/**-------------------------------
+  * dashboard-widget-carousel
+  *-----------------------------*/
+.dashboard-widget-carousel {
+  padding-top: 4px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  .info-item {
+    margin-bottom: 16px;
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+  }
+  .btns {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    .btn,
+    .ant-btn {
+      flex: 1 1 auto;
+      border-radius: 10px;
+    }
+  }
+
+  @include maxW(1100) {
+    .btns {
+      .btn,
+      .ant-btn {
+        flex-grow: 0;
+      }
+    }
+  }
+}
+
+/**-------------------------------
+  * carousel-item
+  *-----------------------------*/
+.carousel-item {
+  display: none;
+  &.visible {
+    display: block;
+  }
+}

@@ -1,0 +1,33 @@
+@import '@/static/scss/base/media.scss';
+
+.psh-list {
+  --psh-offset: 20px;
+  --psh-list-width: 33.33%;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: calc(100% + var(--psh-offset) * 2);
+  margin-left: calc(var(--psh-offset) * -1);
+
+  .psh-card {
+    width: calc(var(--psh-list-width) - (var(--psh-offset) * 2));
+    margin: 0 var(--psh-offset) calc(var(--psh-offset) * 2) var(--psh-offset);
+  }
+
+  @media (max-width: 1120px) {
+    --psh-offset: 10px;
+  }
+
+  @media (max-width: 900px) {
+    --psh-list-width: 50%;
+  }
+
+  @media (max-width: 660px) {
+    --psh-offset: 0;
+    --psh-list-width: 100%;
+    .psh-card {
+      margin-bottom: 20px;
+    }
+  }
+}

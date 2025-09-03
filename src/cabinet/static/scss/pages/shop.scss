@@ -1,0 +1,34 @@
+.page-shop {
+  & > .widget {
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 1260px) and (min-width: 901px) {
+    .tariffs {
+      .tabs-nav {
+        flex-wrap: wrap;
+      }
+    }
+    .tabs-nav-item {
+      flex: 1 1 25%;
+      min-height: 50px;
+    }
+  }
+
+  @include media(sm) {
+    & > .widget {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .tariff-cards {
+      width: 100%;
+      margin-left: 0;
+    }
+    .tariff-cards-item {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<svg width="69" height="68" viewBox="0 0 69 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<circle cx="34.5" cy="34" r="32" stroke="url(#spinner_linear_gradient)" stroke-width="4" />
+	<defs>
+		<linearGradient id="spinner_linear_gradient" x1="34.5" y1="0" x2="34.5" y2="68" gradientUnits="userSpaceOnUse">
+			<stop stop-color="currentColor" />
+			<stop offset="1" stop-color="currentColor" stop-opacity="0" />
+		</linearGradient>
+	</defs>
+</svg>

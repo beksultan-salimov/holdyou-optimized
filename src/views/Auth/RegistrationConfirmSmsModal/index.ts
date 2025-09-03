@@ -1,0 +1,1 @@
+export { RegistrationConfirmSmsModal } from './RegistrationConfirmSmsModal';

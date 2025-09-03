@@ -1,0 +1,65 @@
+/**-------------------------------
+  * psh-avatars-group
+  *-----------------------------*/
+.psh-avatars-group {
+  display: flex;
+  &__item {
+    border: 2px solid #fff;
+    box-sizing: content-box;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+
+    &:not(:nth-child(1)) {
+      margin-left: -6px;
+    }
+
+    &--extra {
+      background-color: var(--color-primary-old);
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: var(--font-base);
+      font-size: 13px;
+      font-weight: 500;
+
+      &.is-custom {
+        &::before {
+          content: "";
+          background: rgba(0, 0, 0, 0.5);
+          backdrop-filter: blur(2px);
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 50%;
+        }
+      }
+
+      span {
+        position: relative;
+      }
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      position: relative;
+
+      &.is-scale {
+        height: 160%;
+        width: 160%;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: none;
+      }
+    }
+  }
+}

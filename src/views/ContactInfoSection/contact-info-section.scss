@@ -1,0 +1,73 @@
+@import '@/static/scss/base/media.scss';
+
+.contact-info-section {
+  background: #e8ffff;
+  padding: 58px 0;
+
+  &__title {
+    display: block;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 1.45em;
+    line-height: 1.5;
+  }
+}
+.contact-info-items {
+  display: flex;
+  justify-content: space-between;
+}
+.contact-info-item {
+  width: 20%;
+
+  &__label {
+    color: var(--color-primary-old);
+    display: block;
+    font-family: var(--font-cera);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  p {
+    font-family: var(--font-blog);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+@include media(900) {
+  .contact-info-section {
+    &__title {
+      font-size: 20px;
+    }
+  }
+
+  .contact-info-items {
+    flex-wrap: wrap;
+  }
+
+  .contact-info-item {
+    width: 45%;
+    margin-top: 24px;
+  }
+}
+
+@include media(xs) {
+  .contact-info-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    &__title {
+      margin-bottom: 0;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+  .contact-info-item {
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+    p {
+      max-width: 220px;
+      margin: 0 auto;
+    }
+  }
+}

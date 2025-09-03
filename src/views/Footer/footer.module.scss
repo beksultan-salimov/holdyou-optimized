@@ -1,0 +1,150 @@
+@import '@/static/scss/base/media.scss';
+
+.footer {
+  background: var(--color-primary-old);
+  border-bottom: 8px solid var(--color-text);
+  padding-top: 40px;
+  padding-bottom: 25px;
+
+  a {
+    &:hover {
+      opacity: 0.65;
+    }
+  }
+}
+
+.inner {
+  display: flex;
+  justify-content: space-around;
+}
+
+.col {
+  width: 20%;
+  padding-right: 20px;
+}
+
+.col_description,
+.col_menu_about,
+.col_menu_services,
+.col_menu_approaches,
+.col_contacts {
+  position: relative;
+}
+
+.description {
+  color: var(--color-text);
+  font-size: 14px;
+  font-family: var(--font-cera);
+  line-height: 1.6;
+  max-width: 252px;
+  p {
+    margin-top: 12px;
+  }
+}
+
+.description_info {
+  margin-bottom: 20px;
+}
+
+.col_title {
+  color: var(--color-text);
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: var(--font-cera);
+  margin-bottom: 12px;
+}
+
+.menu_list {
+  list-style-type: none;
+  margin-bottom: 16px;
+  padding: 0;
+  li {
+    padding: 8px 0;
+  }
+  a {
+    font-size: 14px;
+    font-family: var(--font-cera);
+    color: var(--color-text);
+    text-decoration: none;
+    display: inline-block;
+
+    img {
+      display: inline-block;
+      margin-right: 8px;
+      top: 2px;
+    }
+  }
+}
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 16px 0 0;
+  max-width: 135px;
+  padding: 0;
+  width: 100%;
+
+  li {
+    margin: 0 16px 18px 0;
+    width: 28px;
+  }
+}
+
+// @include media(lg) {
+//   .col {
+//     width: 20%;
+//   }
+// }
+
+@media (max-width: 900px) {
+  .col_menu_approaches {
+    display: none;
+  }
+  .col {
+    width: 25%;
+  }
+}
+@include media(sm) {
+  .inner {
+    flex-wrap: wrap;
+  }
+  .col {
+    width: 50%;
+  }
+  .col_description,
+  .col_menu_about {
+    padding-bottom: 30px;
+  }
+}
+@include media(xs) {
+  .footer {
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 500px) {
+  .inner {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+  .description {
+    max-width: 100%;
+  }
+  .col {
+    padding-right: 0;
+    margin: 0 auto 40px;
+    width: 100%;
+  }
+  .col_description,
+  .col_menu_about {
+    padding-bottom: 0;
+  }
+  .col_contacts {
+    margin-bottom: 10px;
+  }
+  .col_menu_approaches {
+    display: block;
+  }
+}

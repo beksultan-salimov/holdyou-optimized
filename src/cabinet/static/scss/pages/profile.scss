@@ -1,0 +1,242 @@
+@mixin smallerAvatar {
+  padding-left: 72px;
+  .avatar {
+    font-size: 60px;
+  }
+  .btn-change-avatar {
+    font-size: $font-size-md;
+    .anticon {
+      display: none;
+    }
+  }
+}
+
+.profile-settings {
+  &-header {
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+
+  .title {
+    margin-bottom: 20px;
+  }
+
+  .switch-remember {
+    margin-bottom: 16px;
+    .title-icon {
+      height: 27px;
+    }
+    .title-label {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      & > span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 27px;
+        margin-right: 17px;
+      }
+    }
+    .form-item {
+      display: inline-flex;
+      height: 27px;
+      position: relative;
+    }
+    .ant-form-item-control-input {
+      min-height: 27px;
+    }
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+  }
+  &-avatar-col,
+  &-reminder-col {
+    flex: 0 0 50%;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  &-avatar {
+    position: relative;
+    padding-left: 120px;
+
+    .avatar {
+      background-color: #ecf7f8;
+      color: $color-primary;
+      display: block;
+      font-size: 100px;
+      font-weight: 700;
+      height: 1em;
+      width: 1em;
+      line-height: 1em;
+      margin-bottom: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
+    .avatar-image {
+      border-radius: 100px;
+      position: relative;
+    }
+    .avatar-label {
+      font-size: 19px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      text-transform: uppercase;
+    }
+    input[type='file'] {
+      display: none;
+    }
+    .label-input-file {
+      position: absolute;
+      opacity: 0;
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+    }
+
+    .title {
+      margin-bottom: 10px;
+    }
+    .btn-change-avatar {
+      margin-bottom: 10px;
+    }
+
+    @include maxW(1100) {
+      padding-left: 95px;
+      .avatar {
+        font-size: 75px;
+      }
+    }
+    @include minmaxW(901, 1119) {
+      @include smallerAvatar;
+    }
+    @include media(sm) {
+      @include smallerAvatar;
+    }
+    // @include minmaxW(576, 700) {
+    //   @include smallerAvatar;
+    // }
+    // @include media(xxs) {
+    //   @include smallerAvatar;
+    // }
+  }
+
+  @media (max-width: 600px) {
+    .btn-change-avatar {
+      font-size: 16px;
+    }
+    .profile-settings {
+      // &-header {
+      //   margin-bottom: 0;
+      // }
+      &-avatar-col,
+      &-reminder-col {
+        flex: 1 0 100%;
+        max-width: 100%;
+      }
+      &-reminder-col {
+        margin-top: 35px;
+      }
+      &-avatar,
+      &-reminder {
+        flex: 1 0 100%;
+        max-width: 100%;
+      }
+      &-reminder {
+        margin-top: 35px;
+      }
+      &-avatar {
+        padding-left: 0;
+        padding-right: 80px;
+
+        .avatar {
+          left: 100%;
+          transform: translateX(-100%);
+        }
+      }
+    }
+  }
+
+  @include media(xxs) {
+    .profile-settings {
+      &-avatar {
+        padding-right: 0;
+        padding-top: 80px;
+
+        .avatar {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    .btn-change-avatar {
+      width: 100%;
+      font-size: 15px;
+    }
+  }
+}
+
+.profile-action-panel {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #d7e3e4;
+
+  .btn {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-right: 12px;
+  }
+}
+
+/**-------------------------------
+  * modal-change-username
+  *-----------------------------*/
+.modal-change-username {
+  .subtitle {
+    line-height: 1.4;
+    max-width: 280px;
+    margin: -20px auto 25px;
+  }
+}
+
+/**-------------------------------
+  * modal-change-username-confirm
+  *-----------------------------*/
+.modal-change-username-confirm {
+  .subtitle {
+    line-height: 1.4;
+    max-width: 280px;
+    margin: -20px auto 25px;
+  }
+  .form-prefooter {
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .field-sms {
+    display: flex;
+    width: 250px;
+    margin: 0 auto;
+    justify-content: space-between;
+    .form-field,
+    .field {
+      width: 50px;
+      height: 50px;
+    }
+    input {
+      padding: 0 5px;
+      text-align: center;
+    }
+  }
+}

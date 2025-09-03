@@ -1,0 +1,1 @@
+export { HowItWorkHome } from './HowItWorkHome';

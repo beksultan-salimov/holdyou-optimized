@@ -1,0 +1,362 @@
+.body-agora {
+  .cabinet-header,
+  .cabinet-sidebar,
+  .page-header,
+  & > header,
+  & > footer {
+    display: none;
+  }
+  .cabinet-main,
+  .cabinet-wrapper {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  .helpcrunch-iframe-wrapper {
+    & > iframe {
+      transform: scale(0.6);
+    }
+  }
+}
+.agora-page {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #202124;
+  color: #f2f2f2;
+  z-index: 5000;
+
+  &-inner {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &-header {
+    margin-bottom: 40px;
+    width: 100%;
+    text-align: center;
+  }
+
+  &-errors {
+    color: tomato;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  & > .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+  }
+
+  .agora-page-participants {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin-bottom: 40px;
+    img {
+      display: inline-block;
+    }
+    &-item {
+      margin: 0 10px;
+      text-align: center;
+      flex: 0 0 150px;
+      &-name {
+        margin-top: 6px;
+      }
+    }
+  }
+
+  .FullScreen {
+    background: #202124;
+    color: #f2f2f2;
+  }
+
+  .agora-videos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .agora-vid {
+    background-color: #3c4043;
+    border-radius: 8px;
+    position: absolute;
+
+    &-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+      width: 80px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      text-align: center;
+      font-weight: 500;
+      transform: translate(-50%, -50%);
+      background: #01579b;
+      border-radius: 50%;
+      font-size: 30px;
+      transition: all .4s ease;
+    }
+    &-inner {
+      border-radius: 8px;
+      & > div {
+        border-radius: 8px;
+      }
+      &.no-video {
+        background: transparent !important;
+      }
+    }
+    video {
+      border-radius: 8px;
+    }
+
+    &:hover {
+      .agora-vid-btn-minify {
+        opacity: 1;
+      }
+    }
+  }
+  .agora-vid-remote {
+    background-color: #3c4043;
+    // background-color: #5a5e62;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .agora-vid-label {
+      height: 120px;
+      width: 120px;
+      font-size: 40px;
+      background: #c2185b;
+    }
+  }
+  .agora-vid-local {
+    background-color: #4a4e51;
+    color: #FFF;
+    font-size: 16px;
+    bottom: 80px;
+    right: 35px;
+    z-index: 10;
+    width: 235px;
+    height: 135px;
+    transition: all .4s ease;
+
+    &.is-minify {
+      height: 40px;
+      width: 40px;
+      right: 35px;
+      transform: none;
+      border-radius: 40px;
+
+      .agora-vid-label {
+        height: 40px;
+        width: 40px;
+        font-size: 16px;
+      }
+      .agora-vid-btn-minify {
+        top: -5px;
+        right: -5px;
+      }
+    }
+  }
+
+  .agora-panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    height: 60px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.25s ease-out, opacity 0.4s ease;
+
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .agora-panel-btn {
+    background-color: rgb(60,64,67);
+    color: #f2f2f2;
+    border: none;
+    border-radius: 40px;
+    box-shadow: none;
+    font-size: 12px;
+    padding: 5px;
+    margin: 5px;
+    height: 40px;
+    min-width: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.25s ease;
+
+    svg {
+      font-size: 20px;
+      height: 1em;
+      width: 1em;
+    }
+
+    &-exit {
+      min-width: 56px;
+      svg {
+        font-size: 24px;
+      }
+    }
+
+    &:hover {
+      background-color: #434649;
+    }
+
+    &.active {
+      background-color: rgb(234,67,53);
+
+      &:hover {
+        background-color: #ea493c;
+      }
+    }
+  }
+
+  .agora-page-demo-panel {
+    position: relative;
+    z-index: 100;
+  }
+
+  .btn-join-agora {
+    border-radius: 25px;
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  .agora-manager {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+
+  .agora-vid-remote-empty {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    max-width: 100%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .agora-vid-btn-minify {
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    font-size: 7px;
+    background: rgb(37, 40, 42);
+    cursor: pointer;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    opacity: 0;
+    transition: all .3s ease;
+    z-index: 10;
+
+    &::before {
+      content: "";
+      height: 1px;
+      width: 1em;
+      border: 1px solid #fff;
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all .3s ease;
+    }
+
+    &:hover {
+      background-color: rgb(47, 51, 54);
+    }
+
+    &.is-minify {
+      &::before {
+        height: 1em;
+        top: 50%;
+      }
+      background-color: rgb(234,67,53);
+
+      &:hover {
+        background-color: #ea493c;
+      }
+    }
+  }
+
+  .agora-time {
+    font-family: 'CeraPro', 'Raleway', -apple-system, sans-serif;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    font-size: 14px;
+    color: #FFF;
+    font-weight: 500;
+    z-index: 100;
+  }
+
+  .agora-vid-remote-audio-muted {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 18px;
+    z-index: 1000;
+    color: rgb(234, 67, 53);
+
+    svg {
+      height: 1em;
+      width: 1em;
+    }
+  }
+
+  @media (max-width: 700px), (max-height: 700px) {
+    .agora-vid-local {
+      height: 100px;
+      width: 175px;
+
+      .agora-vid-label {
+        height: 60px;
+        width: 60px;
+        font-size: 25px;
+      }
+    }
+  }
+
+  @media (max-width: 460px) {
+    .agora-panel {
+      bottom: 10px;
+    }
+    .agora-vid-local {
+      right: 50%;
+      transform: translateX(50%);
+    }
+  }
+}
