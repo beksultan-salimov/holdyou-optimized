@@ -11,6 +11,7 @@ import { ContentBlock } from '@/components/Content';
 import { Button } from '@/components/Button';
 import { HowConsultation } from '@/views/HowConsultation';
 import './how-it-work.scss';
+import Image from "next/image";
 
 interface IProps {
   params: { lang: LangType };
@@ -48,7 +49,7 @@ export default async function HowItWork({ params: { lang } }: IProps) {
 
         <ContentBlock
           image={
-            <img
+            <Image
               src="/img/how_it_work.png"
               alt={t('how_it_work.main.title')}
               className="lazy"
@@ -78,7 +79,7 @@ export default async function HowItWork({ params: { lang } }: IProps) {
 
       <Section className="hiw-choice" container="sm">
         <ContentBlock
-          image={<img src="/img/how_choose.png" alt="" />}
+          image={<Image src="/img/how_choose.png" alt="" />}
           isImageShadow={false}
           isReverse
           className="m_hiwChoice"

@@ -12,6 +12,7 @@ import { Section } from '@/components/Section';
 import { TeamCards } from '@/views/Team';
 import { Breadcrumbs } from '@/views/Breadcrumbs';
 import './about.scss';
+import Image from "next/image";
 
 interface IProps {
   params: { lang: LangType };
@@ -81,7 +82,7 @@ export default async function About({ params: { lang } }: IProps) {
                 {t('about.start.title')}
               </Title>
             }
-            image={<img src="/img/about_us_1.jpg" alt={t('about.title')} />}
+            image={<Image src="/img/about_us_1.jpg" alt={t('about.title')} />}
           >
             {t('about.start.description')?.map((item: string, idx: number) => (
               <p

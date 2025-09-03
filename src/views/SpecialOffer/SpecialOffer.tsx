@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import { ISpecialOffer } from '@/types/BaseTypes';
 import { Button } from '@/components/Button';
 import './special-offer.scss';
+import Image from "next/image";
 
 interface IProps {
   data: ISpecialOffer;
@@ -21,7 +22,7 @@ const SpecialOffer = ({ className, data }: IProps) => {
               href={url}
               isLang={false}
               type="link"
-              iconRight={!!icon ? <img src={icon} alt="" /> : undefined}
+              iconRight={!!icon ? <Image src={icon} alt="" /> : undefined}
             >
               {link_text}
             </Button>

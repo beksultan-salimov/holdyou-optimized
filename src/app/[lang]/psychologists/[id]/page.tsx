@@ -128,7 +128,7 @@ export default async function Psychologist({params: {lang, id}}: IProps) {
         if (!isEmpty(languagesList)) {
             items?.push({
                 icon: !!get(languagesList, [0, 'icon']) ? (
-                    <img src={get(languagesList, [0, 'icon'])} alt=""/>
+                    <Image src={get(languagesList, [0, 'icon'])} alt=""/>
                 ) : (
                     <Icon name="Langs"/>
                 ),
@@ -142,7 +142,7 @@ export default async function Psychologist({params: {lang, id}}: IProps) {
         if (!isEmpty(featuresList)) {
             featuresList.forEach((item: any) => {
                 items.push({
-                    icon: !!item?.icon ? <img src={item?.icon} alt=""/> : '',
+                    icon: !!item?.icon ? <Image src={item?.icon} alt=""/> : '',
                     text: item?.name,
                     color: item?.color,
                 });

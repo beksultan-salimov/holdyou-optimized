@@ -7,6 +7,7 @@ import { Section } from '@/components/Section';
 import { Title } from '@/components/Title';
 import { ContactsForm } from './ContactsForm';
 import './contact.scss';
+import Image from "next/image";
 
 interface IProps {
   params: { lang: LangType };
@@ -73,7 +74,7 @@ export default async function Contact({ params: { lang } }: IProps) {
                 <ul className="contact-block-socials-items">
                   <li className="contact-block-socials-item">
                     <a href="https://business.facebook.com/holdyouhelp">
-                      <img
+                      <Image
                         src="/img/contact_facebook.svg"
                         alt="https://business.facebook.com/holdyouhelp"
                         title="https://business.facebook.com/holdyouhelp"
@@ -82,7 +83,7 @@ export default async function Contact({ params: { lang } }: IProps) {
                   </li>
                   <li className="contact-block-socials-item">
                     <a href="https://www.instagram.com/holdyouhelp/">
-                      <img
+                      <Image
                         src="/img/contact_instagram.svg"
                         alt="https://www.instagram.com/holdyouhelp/"
                         title="https://www.instagram.com/holdyouhelp/"
@@ -91,7 +92,7 @@ export default async function Contact({ params: { lang } }: IProps) {
                   </li>
                   <li className="contact-block-socials-item">
                     <a href="viber://chat?number=380974970910">
-                      <img
+                      <Image
                         src="/img/contact_viber.svg"
                         alt="380974970910"
                         title="380974970910"
@@ -100,7 +101,7 @@ export default async function Contact({ params: { lang } }: IProps) {
                   </li>
                   <li className="contact-block-socials-item">
                     <a href="tg://resolve?domain=HoldYouHelp">
-                      <img
+                      <Image
                         src="/img/contact_telegram.svg"
                         alt="HoldYouHelp"
                         title="HoldYouHelp"

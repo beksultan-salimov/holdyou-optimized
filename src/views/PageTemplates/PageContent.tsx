@@ -8,6 +8,7 @@ import PBLink from '@/views/BuilderEditor/PBLink';
 import PBAnketa from '@/views/BuilderEditor/PBAnketa';
 import './pageContent.scss';
 import '@/views/BuilderEditor/pbcomponents.scss'
+import Image from "next/image";
 
 
 const renderContent = (component: any, Tag: any = 'div') => {
@@ -38,7 +39,7 @@ const renderComponent = (component: any) => {
   if (!tagName) {
     if (type === 'image') {
       return (
-        <img
+        <Image
           {...attributes}
           src={attributes?.src}
           alt={attributes?.alt}

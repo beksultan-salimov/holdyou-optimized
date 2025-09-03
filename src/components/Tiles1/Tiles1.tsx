@@ -1,5 +1,6 @@
 'use client'
 import s from './tiles1.module.scss';
+import Image from "next/image";
 
 interface IProps {
   className?: string;
@@ -14,7 +15,7 @@ const Tiles1 = ({ items, className, image, showDeafultImage = true }: IProps) =>
       {items?.map((text: any, idx: number) => (
         <div className={s.item} key={idx}>
           {!!showDeafultImage && !image && (
-            <img
+            <Image
               src="/img/icons/minus-circle.svg"
               className={s.icon}
               alt="-"

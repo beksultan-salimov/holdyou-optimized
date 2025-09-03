@@ -4,6 +4,7 @@ import './psychologists-carousel.scss';
 import { Button } from '@/components/Button';
 import { ROUTES } from '@/config';
 import { Link } from '@/components/Link';
+import Image from "next/image";
 
 interface IProps {
   items: any;
@@ -43,7 +44,7 @@ const PsychologistsCarousel = ({ items }: IProps) => {
             <div className="psychologists-carousel-card">
               <Link href={ROUTES.psychologist(id)} className="psychologists-carousel-card__link">
                 <div className="psychologists-carousel-card__media">
-                  {photo?.thumbnail && <img src={photo?.thumbnail} alt={fullname} />}
+                  {photo?.thumbnail && <Image src={photo?.thumbnail} alt={fullname} />}
                 </div>
                 <div className="psychologists-carousel-card__body">
                   <h4 className="psychologists-carousel-card__name">

@@ -70,7 +70,7 @@ const PsychologistCardSimple = ({
       itemsMain.push({
         key: 'languages',
         icon: !!get(languagesList, [0, 'icon']) ? (
-          <img src={get(languagesList, [0, 'icon'])} alt="" />
+          <Image src={get(languagesList, [0, 'icon'])} alt="" />
         ) : (
           <Icon name="Langs" />
         ),

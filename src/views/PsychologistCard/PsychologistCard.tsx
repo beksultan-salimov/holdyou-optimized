@@ -61,7 +61,7 @@ const PsychologistCard = ({
       items.push({
         key: 'languages',
         icon: !!get(languagesList, [0, 'icon']) ? (
-          <img src={get(languagesList, [0, 'icon'])} alt="" />
+          <Image src={get(languagesList, [0, 'icon'])} alt="" />
         ) : (
           <Icon name="Langs" />
         ),
@@ -109,7 +109,7 @@ const PsychologistCard = ({
                   <span className="psh-badge__label">{item?.name}</span>
                   <span className="psh-badge__icon psh-badge__icon--right">
                     {!!item?.icon ? (
-                      <img src={item?.icon} alt="" />
+                      <Image src={item?.icon} alt="" />
                     ) : (
                       <Icon name="Langs" />
                     )}

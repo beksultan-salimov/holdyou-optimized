@@ -5,6 +5,7 @@ import { getDate, isEmpty } from "@/utils/helpers";
 import { RelatedPosts } from "@/views/RelatedPosts";
 import { Breadcrumbs } from '@/views/Breadcrumbs';
 import { FlashCard } from '@/views/FlashCard';
+import Image from "next/image";
 
 const PostTemplate = ({ pageData = {}, children, t, relatedItems }: any) => {
   const { title, created, preview } = pageData;
@@ -33,7 +34,7 @@ const PostTemplate = ({ pageData = {}, children, t, relatedItems }: any) => {
         <div className="post-template__content">
           {!!preview?.original && (
             <div className="post-template__preview">
-              <img src={preview?.original} alt={title} />
+              <Image src={preview?.original} alt={title} />
             </div>
           )}
           {children}

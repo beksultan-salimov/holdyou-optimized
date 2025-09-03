@@ -1,5 +1,6 @@
 import { makeCls } from '@/utils/helpers';
 import s from './tileSteps.module.scss';
+import Image from "next/image";
 
 interface IProps {
   className?: string;
@@ -34,7 +35,7 @@ const TileStep = ({
       </div>
       {(!!imgSrc || !!image) && (
         <div className={s.media}>
-          {!!imgSrc && <img src={imgSrc} alt={title} loading="lazy" />}
+          {!!imgSrc && <Image src={imgSrc} alt={title} loading="lazy" />}
           {!!image && !imgSrc && image}
         </div>
       )}

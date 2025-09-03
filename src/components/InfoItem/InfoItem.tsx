@@ -1,6 +1,7 @@
 // import { IconNamesType } from "@/utils/iconsSet"
 import { Icon } from '@/components/Icon';
 import clsx from 'clsx';
+import Image from "next/image";
 
 interface IProps {
   className?: string;
@@ -54,7 +55,7 @@ const InfoItem = ({
     >
       <div className="info-item-inner">
         <div className="info-item-media">
-          {!!image && !icon && <img src={image} alt="" />}
+          {!!image && !icon && <Image src={image} alt="" />}
           {!image && !icon && !!iconName && (
             <Icon name={iconName} className="info-item-icon" />
           )}

@@ -18,6 +18,7 @@ import {
 } from "@/store/checkoutSlice"
 import { useLang } from '@/hooks/useLang';
 import { useTranslationClient } from '@/config/i18n/client';
+import Image from "next/image";
 
 interface IProps {
   name?: string
@@ -59,7 +60,7 @@ const CheckoutResume = ({ name, image }: IProps) => {
         <div className="checkout-resume-content">
           {!!image && (
             <div className="checkout-resume-image">
-              <img src={image} alt={name} />
+              <Image src={image} alt={name!} />
             </div>
           )}
           <Title

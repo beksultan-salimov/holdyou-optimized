@@ -13,6 +13,7 @@ import { FormInput, FormSelect, FormTextarea } from '@/components/BaseForm';
 import { Button } from '@/components/Button';
 import { Stars } from '@/components/Stars';
 import { BaseModal } from '@/views/BaseModal';
+import Image from "next/image";
 
 const reviewsSubmit = async ({ formData, t, modalOpen, onSuccess }: any) => {
   const normalizedFormData = formData;
@@ -122,7 +123,7 @@ const ReviewsAddModal = ({
                     <div className="psy-block__inner">
                       <div className="psy-block__media">
                         {!!p?.photo?.thumbnail && (
-                          <img src={p?.photo?.sm} alt={p?.fullname} />
+                          <Image src={p?.photo?.sm} alt={p?.fullname!} />
                         )}
                       </div>
                       <div className="psy-block__content">

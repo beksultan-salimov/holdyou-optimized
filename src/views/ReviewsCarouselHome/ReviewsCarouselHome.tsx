@@ -10,6 +10,7 @@ import { Stars } from '@/components/Stars';
 import { Button } from '@/components/Button';
 import { Icon } from '@/components/Icon';
 import './reviews-carousel-home.scss';
+import Image from "next/image";
 
 interface IProps {
   items?: any;
@@ -31,7 +32,7 @@ const ReviewsCarouselHome = ({
       !!_items && _items?.length > 0
         ? _items
         : !isEmpty(dic)
-        ? ids?.filter((_id) => !!get(dic, [_id]))?.map((_id) => get(dic, [_id]))
+        ? ids?.filter((_id: any) => !!get(dic, [_id]))?.map((_id: any) => get(dic, [_id]))
         : [],
     [_items, ids, dic]
   );
@@ -90,7 +91,7 @@ const ReviewsCarouselHome = ({
                     >
                       {!!userAvatar && (
                         <div className="reviews-carousel-home-card__user-avatar">
-                          <img src={userAvatar} alt="" />
+                          <Image src={userAvatar} alt="" />
                         </div>
                       )}
                       {!!userName && (

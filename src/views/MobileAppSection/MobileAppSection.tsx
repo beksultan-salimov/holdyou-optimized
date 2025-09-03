@@ -42,7 +42,7 @@ const MobileAppSection = ({ t }: any) => {
           </div>
           <div className="mobile-app-section__right">
             <div className="mobile-app-section__media">
-              <img
+              <Image
                 src="/img/mobile_app_img.png"
                 alt={t('site.mobile_app_title')}
               />

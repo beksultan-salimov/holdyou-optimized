@@ -1,4 +1,5 @@
 import './partners.scss';
+import Image from "next/image";
 
 interface IProps {
   items: any[];
@@ -14,7 +15,7 @@ const Partners = ({ items, className = '' }: IProps) => {
         {items.map(({ image, name, link }: any, idx: number) => (
           <li key={idx} className="partners__item">
             <a href={link} target="_blank" rel="noopener nofollow">
-              <img loading="lazy" src={image} alt={name} />
+              <Image loading="lazy" src={image} alt={name} />
             </a>
           </li>
         ))}

@@ -21,6 +21,7 @@ import { HomeBigTxt } from '@/views/HomeBigTxt';
 import { FeedbackSection } from '@/views/FeedbackSection';
 import { PricesHero } from '@/views/PricesViews/PricesHero';
 import './pricesPage.scss';
+import Image from "next/image";
 
 const workingIcons = [
   HeadPhoneIcon,
@@ -82,7 +83,7 @@ export default async function Prices({ params: { lang } }: IProps) {
       >
         <WhileWorking
           image={
-            <img
+            <Image
               src="/img/while-working.png"
               alt={t('prices.while_working.title')}
             />

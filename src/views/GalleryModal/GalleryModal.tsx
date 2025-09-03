@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import { MODALS } from '@/config';
 import { useModals } from '@/hooks/useModals';
 import { BaseModal } from '@/views/BaseModal';
+import Image from "next/image";
 
 const GalleryModal = () => {
   const modalId = MODALS.gallery;
@@ -79,7 +80,7 @@ const GalleryModal = () => {
               {items?.map((item: any, idx: number) => (
                 <div key={idx} className="modal-gallery__main__item">
                   <div className="modal-gallery__main__item__inner">
-                    <img src={item?.original} alt="" />
+                    <Image src={item?.original} alt="" />
                   </div>
                 </div>
               ))}
@@ -102,7 +103,7 @@ const GalleryModal = () => {
                 {items?.map((item: any, idx: number) => (
                   <div key={idx} className="modal-gallery__thumbnails__item">
                     <div className="modal-gallery__thumbnails__item__inner">
-                      <img src={item?.thumbnail} alt="" />
+                      <Image src={item?.thumbnail} alt="" />
                     </div>
                   </div>
                 ))}
