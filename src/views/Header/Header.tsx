@@ -52,7 +52,6 @@ const MenuItem = ({item}: any) => {
                             <MenuItem
                                 item={_item}
                                 key={_idx}
-                                // handleToggleMenu={handleToggleMenu}
                             />
                         ))}
                     </ul>

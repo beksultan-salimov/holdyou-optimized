@@ -27,7 +27,7 @@ const NotificationsPage = ({ props }: IProps) => {
       ) : (
         <EmptyCard
           text={t('cabinet.notifications.items.empty')}
-          image={<Image src={EmptyImg} alt="" />}
+          image={<img src={EmptyImg} alt="" />}
         />
       )}
     </Page>

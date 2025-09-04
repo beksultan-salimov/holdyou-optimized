@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^15.5.2",
     "@next/third-parties": "^14.0.4",
     "@reduxjs/toolkit": "^1.9.5",
     "@typeform/embed-react": "^3.10.0",
@@ -72,9 +73,11 @@
     "universal-cookie": "^6.1.0"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^7.0.2",
     "@svgr/webpack": "^8.0.1",
     "@types/leaflet": "^1.9.3",
     "@types/lodash": "^4.14.195",
-    "@types/react-slick": "^0.23.10"
+    "@types/react-slick": "^0.23.10",
+    "postcss": "^8.5.6"
   }
 }

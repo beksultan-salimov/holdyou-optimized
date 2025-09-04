@@ -33,7 +33,7 @@ const CertificateView = ({ lang, services }: IProps) => {
       <Section className="certificate-main" container="sm">
         <div className="section-content">
           <div className="certificate-main__gift">
-            <Image
+            <img
               loading="lazy"
               src="/img/gift.png"
               alt={t('certificate.main.title')}
@@ -73,7 +73,7 @@ const CertificateView = ({ lang, services }: IProps) => {
             }}
           />
           <div className="certificate-about__col-media">
-            <Image
+            <img
               loading="lazy"
               src="/img/certificates.png"
               alt={t('certificate.main.title')}

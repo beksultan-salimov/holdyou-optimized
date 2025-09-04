@@ -87,7 +87,7 @@ export default async function Business({ params: { lang } }: IProps) {
           <ContentBlock
             title={<h4>{t('business.provide_title')}</h4>}
             image={
-              <Image
+              <img
                 src="/img/business_team.jpg"
                 alt={t('business.provide_title')}
                 loading="lazy"

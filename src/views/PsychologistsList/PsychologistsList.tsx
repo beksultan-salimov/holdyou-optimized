@@ -1,4 +1,4 @@
-import { PsychologistCard } from '../PsychologistCard';
+import PsychologistCard from '../PsychologistCard';
 import { EmptyPsychologistsList } from './EmptyPsychologistsList';
 import './psychologistsList.scss';
 

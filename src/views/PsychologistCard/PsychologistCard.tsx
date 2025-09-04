@@ -1,5 +1,5 @@
 'use client';
-import { useMemo } from 'react';
+import { FC, memo, useMemo } from 'react';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { ROUTES } from '@/config';
@@ -13,6 +13,7 @@ import { SimpleTooltip } from '@/components/SimpleTooltip';
 import { Icon } from '@/components/Icon';
 import { PropertiesItems } from '@/components/PropertiesItems';
 import './psychologistCard.scss';
+
 
 interface IProps {
   item: IPsychologist;
@@ -61,7 +62,7 @@ const PsychologistCard = ({
       items.push({
         key: 'languages',
         icon: !!get(languagesList, [0, 'icon']) ? (
-          <Image src={get(languagesList, [0, 'icon'])} alt="" />
+          <img src={get(languagesList, [0, 'icon'])} alt="" />
         ) : (
           <Icon name="Langs" />
         ),
@@ -237,4 +238,4 @@ const PsychologistCard = ({
   );
 };
 
-export { PsychologistCard };
+export default memo(PsychologistCard);

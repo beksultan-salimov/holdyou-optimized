@@ -11,8 +11,6 @@ import { Button } from '@/components/Button';
 import { Icon } from '@/components/Icon';
 import { BubbleMessage } from '@/components/BubbleMessage';
 import { FlashCard } from '@/views/FlashCard';
-import { BlogHome } from '@/views/BlogHome';
-import { ReviewsCarouselHome } from '@/views/ReviewsCarouselHome';
 import MainQuiz from '@/views/MainQuiz/MainQuiz';
 import { PsychologistCardSimple } from '@/views/PsychologistCardSimple';
 import { PshGroupItem } from '@/components/PshGroupItem';
@@ -21,6 +19,7 @@ import { Container } from '@/components/Container';
 import { useSelector } from 'react-redux';
 import { getResultMainQuizDescriptions, getResultMainQuizPsychologists } from '@/store/mainQuizSlice';
 import {clientFetch} from "@/utils/service";
+import dynamic from "next/dynamic";
 
 interface IProps {
   t?: any;
@@ -50,6 +49,7 @@ const HomeCategories = ({
   const [activeCategoryId, setActiveCategoryId] = useState(
     get(categoriesProblems, [0, 'id'])
   );
+
 
   const activeCategory = useMemo(() => {
     return categoriesProblems?.find((c: any) => c?.id === activeCategoryId);
@@ -348,6 +348,8 @@ const CategoriesReviews = ({
   feedbacksDic: any;
   activeCategory: any;
 }) => {
+  const ReviewsCarouselHome = dynamic(() => import('@/views/ReviewsCarouselHome').then(mod => mod.ReviewsCarouselHome), { ssr: false });
+
   if (isEmpty(activeCategory?.feedback_ids)) return null;
 
   return (
@@ -387,6 +389,8 @@ const CategoriesBlog = ({
       setPosts(res.results)
     });
   }, [setPosts]);
+
+  const BlogHome = dynamic(() => import('@/views/BlogHome').then(mod => mod.BlogHome), { ssr: false });
 
 
   if (isEmpty(activeCategory?.article_ids)) return null;

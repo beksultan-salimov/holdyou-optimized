@@ -4,6 +4,7 @@ import { getDate } from "@/utils/helpers";
 import { Icon } from "@/components/Icon";
 import "./newsCard.scss";
 import { ROUTES } from "@/config";
+import { FC, memo } from 'react';
 
 interface IProps {
   title?: React.ReactNode;
@@ -40,4 +41,4 @@ const NewsCard = ({ title, text, date, slug }: IProps) => {
   );
 };
 
-export { NewsCard };
+export default memo(NewsCard);

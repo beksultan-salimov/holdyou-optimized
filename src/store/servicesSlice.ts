@@ -53,24 +53,22 @@ export const buyService = createAsyncThunk(
       success_url: successUrl,
     };
 
-    console.log(data)
-
-    // try {
-    //   return await clientFetch('/payment/create', {
-    //     method: 'POST',
-    //     body: JSON.stringify(data),
-    //   }).then((res: any) => {
-    //     if (res?.billing_url) {
-    //       window.location.href = res.billing_url;
-    //     } else {
-    //       throw new Error();
-    //     }
-    //   });
-    // } catch (error: any) {
-    //   notification.error({
-    //     message: get(error, ["errors", "details"], t('cabinet.default_error_message')),
-    //   })
-    // }
+    try {
+      return await clientFetch('/payment/create', {
+        method: 'POST',
+        body: JSON.stringify(data),
+      }).then((res: any) => {
+        if (res?.billing_url) {
+          window.location.href = res.billing_url;
+        } else {
+          throw new Error();
+        }
+      });
+    } catch (error: any) {
+      notification.error({
+        message: get(error, ["errors", "details"], t('cabinet.default_error_message')),
+      })
+    }
   },
 )
 

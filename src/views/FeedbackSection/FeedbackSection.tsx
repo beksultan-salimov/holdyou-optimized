@@ -7,8 +7,8 @@ import { useLang } from '@/hooks/useLang';
 import { Container, IContainerSize } from '@/components/Container';
 import { Section } from '@/components/Section';
 import { Title } from '@/components/Title';
-import { FeedbackFormHome } from '@/views/FeedbackFormHome';
 import backgroundFeedbackImg from '@/static/img/backgroundFeedbackForm.png';
+import dynamic from "next/dynamic";
 
 interface IProps {
   title?: React.ReactNode;
@@ -20,8 +20,8 @@ interface IProps {
 const FeedbackSection = ({ containerSize, title, titleComponent, className }: IProps) => {
   const { lang } = useLang();
   const { t } = useTranslationClient(lang, ['contact']);
-
-  return (
+    const FeedbackFormHome = dynamic(() => import('@/views/FeedbackFormHome').then(mod => mod.FeedbackFormHome), { ssr: false });
+    return (
     <Section className={clsx('home-feedback', className)}>
       <Container size={containerSize}>
         <FeedbackFormHome

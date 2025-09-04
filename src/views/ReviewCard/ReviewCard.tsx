@@ -1,4 +1,5 @@
 import "./reviewCard.scss";
+import { FC, memo } from 'react';
 
 interface IProps {
   title?: React.ReactNode;
@@ -16,4 +17,4 @@ const ReviewCard = ({ title, text }: IProps) => {
   );
 };
 
-export { ReviewCard };
+export default memo(ReviewCard);

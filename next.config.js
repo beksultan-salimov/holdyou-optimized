@@ -1,13 +1,15 @@
 /** @type {import('next').NextConfig} */
 
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+    enabled: process.env.ANALYZE === 'true',
+});
+
 const nextConfig = {
-
-poweredByHeader: false,
-compress: true,
-swcMinify: true,
-
+    poweredByHeader: false,
+    compress: true,
+    swcMinify: true,
     images: {
-        formats: ['image/avif','image/webp'],
+        formats: ['image/avif', 'image/webp'],
         remotePatterns: [
             {
                 protocol: process.env.NEXT_SERVER_PROTOCOL,
@@ -31,8 +33,17 @@ swcMinify: true,
             {
                 source: '/revalidate',
                 headers: [
-                    {key: 'Access-Control-Allow-Origin', value: '*'},
-                    {key: 'Access-Control-Allow-Methods', value: 'GET'},
+                    { key: 'Access-Control-Allow-Origin', value: '*' },
+                    { key: 'Access-Control-Allow-Methods', value: 'GET' },
+                ],
+            },
+            {
+                source: '/:lang(ru|uk)/psychologists/:id*',
+                headers: [
+                    {
+                        key: 'Cache-Control',
+                        value: 'public, s-maxage=2592000, stale-while-revalidate=59',
+                    },
                 ],
             },
         ];
@@ -55,7 +66,7 @@ swcMinify: true,
                 source: '/:path*(\\\\/\\\\/\\\\/+)',
                 destination: '/:path',
                 permanent: true,
-                has: []
+                has: [],
             },
             {
                 source: '/:path*/index.html',
@@ -81,10 +92,9 @@ swcMinify: true,
                 source: '/ru/page/psycholog',
                 destination: '/ru',
                 permanent: true,
-            }
-        ]
-    }
+            },
+        ];
+    },
 };
 
-
-module.exports = nextConfig
+module.exports = withBundleAnalyzer(nextConfig);

@@ -7,8 +7,8 @@ import { LangType, languages } from '@/config/i18n/settings';
 import GlobalComponents from '@/views/GlobalComponents';
 import { getAlternatesUrls, getDomain, getOgTagsDefault} from '@/utils/helpers';
 import { getTranslationServer } from '@/config/i18n';
-// import { OtherScripts } from '@/views/OtherScripts';
 import { HeadScripts } from '@/views/HeadScripts';
+import {bloggerSans, ceraPro, raleway} from '@/app/fonts';
 
 interface IProps {
   params: { lang: LangType };
@@ -43,7 +43,7 @@ export default async function RootLayout({
   params: { lang: LangType };
 }) {
   return (
-    <html lang={lang}>
+    <html lang={lang} className={`${ceraPro.variable} ${bloggerSans.variable} ${raleway.variable}`}>
       <head>
         <HeadScripts />
       </head>

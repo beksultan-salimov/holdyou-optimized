@@ -10,7 +10,7 @@ import { Button } from '@/components/Button';
 import { Icon } from '@/components/Icon';
 import { PshGroupItem } from '@/components/PshGroupItem';
 import { SessionSwitcher } from '@/views/SessionSwitcher';
-import holdyouMainImg from '@/static/img/home/holdyouMain.png';
+import holdyouMainImg from '@/static/img/home/holdyouMain.webp';
 import heart from '@/static/img/home/heart.svg';
 
 interface IProps {
@@ -80,8 +80,9 @@ const HomeMain = ({
                 width={379}
                 className="hn-main__media-frame-img"
                 draggable="false"
+                priority
               />
-              <HomeAnimateHeart containerRef={containerRef} />
+              {/*<HomeAnimateHeart containerRef={containerRef} />*/}
             </div>
           </div>
 
@@ -136,6 +137,7 @@ const HomeAnimateHeart = ({
       loading="eager"
       quality={100}
       className="hn-main__media-frame-heart"
+      priority
       style={{
         transform: `translate(${offset.x}px, ${offset.y}px)`,
       }}

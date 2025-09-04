@@ -15,9 +15,6 @@ export const serverFetch = async (
 ) => {
   const url = process.env.NEXT_API_SERVER_URL! + process.env.NEXT_API_URL! + path;
   const userToken = undefined; // TODO fixme
-  // console.log('url', url);
-  // const cookies = new Cookies();
-
   const allHeaders = {
     Accept: 'application/json',
     ...headers,
@@ -38,7 +35,7 @@ export const serverFetch = async (
 
   const res = await fetch(url, {
     headers: allHeaders,
-    next: { tags: ['all'] },
+    next: { tags: ['all'], maxAge: 2592000 },
     ...options,
   });
   const contentType = res.headers.get('content-type');

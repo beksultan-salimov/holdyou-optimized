@@ -16,9 +16,6 @@ const Link = (
 ) => {
   const { lang } = useLang();
   let localizedHref = isLang && lang !== defaultLng ? `/${lang}${href}` : `${href}`;
-  if (localizedHref.endsWith('/') && lang === defaultLng) {
-    localizedHref = localizedHref.substring(0, localizedHref.length - 1);
-  }
 
   return (
     // <NextLink href={localizedHref} {...rest}>{children}</NextLink>

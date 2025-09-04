@@ -6,12 +6,12 @@ import { Section } from '@/components/Section';
 import { Title } from '@/components/Title';
 import { Icon } from '@/components/Icon';
 import ParsedText from '@/components/ParsedText';
-import howWork1Img from '@/static/img/home/howWork1.png';
-import howWork2Img from '@/static/img/home/howWork2.png';
-import howWork3Img from '@/static/img/home/howWork3.png';
-import howWork1dImg from '@/static/img/home/howWork1d.png';
-import howWork2dImg from '@/static/img/home/howWork2d.png';
-import howWork3dImg from '@/static/img/home/howWork3d.jpg';
+import howWork1Img from '@/static/img/home/howWork1.webp';
+import howWork2Img from '@/static/img/home/howWork2.webp';
+import howWork3Img from '@/static/img/home/howWork3.webp';
+import howWork1dImg from '@/static/img/home/howWork1d.webp';
+import howWork2dImg from '@/static/img/home/howWork2d.webp';
+import howWork3dImg from '@/static/img/home/howWork3d.webp';
 
 const howWorkImgs = [
   { main: howWork1Img, decorate: howWork1dImg },

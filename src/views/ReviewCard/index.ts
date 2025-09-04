@@ -1,1 +1,3 @@
-export { ReviewCard } from './ReviewCard'
+import ReviewCard from './ReviewCard'
+
+export default ReviewCard

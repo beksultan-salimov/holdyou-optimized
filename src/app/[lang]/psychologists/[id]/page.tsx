@@ -33,7 +33,7 @@ import {BlogHome} from '@/views/BlogHome';
 import {FeedbackSection} from '@/views/FeedbackSection';
 import {PsychologistBtnVideo} from '@/views/PsychologistViews/PsychologistBtnVideo';
 import {ImagesList} from '@/views/ImagesList';
-import {PsychologistCard} from '@/views/PsychologistCard';
+import PsychologistCard from '@/views/PsychologistCard';
 import {PsychologistCheckoutInPshWrapper} from '@/views/PsychologistViews/PsychologistCheckoutInPshWrapper';
 import {PsychologistNearestBadgeWrapper} from '@/views/PsychologistViews/PsychologistNearestBadgeWrapper';
 import {SendAnalyticsClient} from './sendAnalytics';

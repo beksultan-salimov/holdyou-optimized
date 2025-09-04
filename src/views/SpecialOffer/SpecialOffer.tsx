@@ -22,7 +22,7 @@ const SpecialOffer = ({ className, data }: IProps) => {
               href={url}
               isLang={false}
               type="link"
-              iconRight={!!icon ? <Image src={icon} alt="" /> : undefined}
+              iconRight={!!icon ? <img src={icon} alt="" /> : undefined}
             >
               {link_text}
             </Button>

@@ -1,5 +1,6 @@
 'use client';
 import { useCallback } from 'react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { ROUTES } from '@/config';
 import { useTranslationClient } from '@/config/i18n/client';
@@ -17,7 +18,6 @@ import { ContactInfoSection } from '@/views/ContactInfoSection';
 import { Partners } from '@/views/Partners';
 import { NoWork } from '@/views/NoWork';
 import { HomeBigTxt } from '@/views/HomeBigTxt';
-import { PsychologistsCarouselHome } from '@/views/PsychologistsCarouselHome';
 import { Tariffs } from '@/views/Tariffs';
 import { FeedbackSection } from '@/views/FeedbackSection';
 import HomeMain from './HomeMain';
@@ -30,7 +30,6 @@ import homeHelp4Img from '@/static/img/home/homeHelp4.svg';
 import homeHelp5Img from '@/static/img/home/homeHelp5.svg';
 import homeHelp6Img from '@/static/img/home/homeHelp6.svg';
 import homeBusinessImg from '@/static/img/home/homeBusiness.jpg';
-import dynamic from 'next/dynamic';
 
 // const HomeScrollListener = dynamic(() => import('./HomeScrollListener'), {
 //   ssr: false,
@@ -66,6 +65,8 @@ const groupTherapyIcons = [
 const HomeView = ({ mainData, mainQuiz, servicesSubscription, lang }: IProps) => {
   const { t } = useTranslationClient(lang, ['home']);
   const { t: t_site } = useTranslationClient(lang, ['site']);
+
+  const PsychologistsCarouselHome = dynamic(() => import('@/views/PsychologistsCarouselHome').then(mod => mod.PsychologistsCarouselHome), { ssr: false });
 
   const {
     psychologistsCount,
@@ -110,17 +111,17 @@ const HomeView = ({ mainData, mainQuiz, servicesSubscription, lang }: IProps) =>
         getPromoPshAvatars={getPromoPshAvatars}
       />
 
-      <HomeCategories
-        t={t}
-        t_site={t_site}
-        categoriesProblems={categoriesProblems}
-        articlesDic={articlesDic}
-        feedbacksDic={feedbacksDic}
-        psychologistsDic={psychologistsDic}
-        psychologistsCount={psychologistsCount}
-        getPromoPshAvatars={getPromoPshAvatars}
-        mainQuiz={mainQuiz}
-      />
+      {/*<HomeCategories*/}
+      {/*  t={t}*/}
+      {/*  t_site={t_site}*/}
+      {/*  categoriesProblems={categoriesProblems}*/}
+      {/*  articlesDic={articlesDic}*/}
+      {/*  feedbacksDic={feedbacksDic}*/}
+      {/*  psychologistsDic={psychologistsDic}*/}
+      {/*  psychologistsCount={psychologistsCount}*/}
+      {/*  getPromoPshAvatars={getPromoPshAvatars}*/}
+      {/*  mainQuiz={mainQuiz}*/}
+      {/*/>*/}
 
       <Section
         className="hn-prices section-radius-offset-top"

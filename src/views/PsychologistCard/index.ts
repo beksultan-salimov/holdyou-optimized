@@ -1,1 +1,2 @@
-export { PsychologistCard } from './PsychologistCard';
+import PsychologistCard from './PsychologistCard';
+export default PsychologistCard;

@@ -7,14 +7,11 @@ import { isEmpty, setAuthTokens } from '@/utils/helpers';
 import { clientFetch } from '@/utils/service';
 import { fetchUser } from '@/store/authSlice';
 import { useAppDispatch } from '@/hooks/useStore';
-import { BuilderEditor } from '@/views/BuilderEditor';
 import { Error404 } from '@/views/Error404';
 import { Spinner } from '@/components/Spinner';
 import './pagebuilder.scss';
 import { useTitle } from '@/hooks/useTitle';
-
-//TODO: need?
-// const checkValidToken = (token: string) => true;
+import dynamic from 'next/dynamic';
 
 export default function PageBuilder({
   params: { lang, slug },
@@ -26,6 +23,11 @@ export default function PageBuilder({
   const accessToken = _accessToken?.substring(1);
   const refreshToken = _refreshToken?.substring(1);
   // if (!checkValidToken(token)) return <Error401 />
+
+  const BuilderEditor = dynamic(() =>
+          import('@/views/BuilderEditor').then(mod => mod.BuilderEditor),
+      { ssr: false }
+  );
 
   const dispatch = useAppDispatch();
   const [cookies, setCookie] = useCookies();
@@ -50,7 +52,6 @@ export default function PageBuilder({
         .then((res: any) => {
           if (res?.id) {
             setPageData(res);
-            //TODO need check diff user before fetch
             dispatch(fetchUser());
           }
         })
