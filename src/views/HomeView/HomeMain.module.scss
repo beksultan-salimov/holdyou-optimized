@@ -4,7 +4,7 @@
 /**-------------------------------
   * hn-main
   *-----------------------------*/
-.hn-main {
+.hnMain {
   padding-top: 80px;
   padding-bottom: 100px;
   background: #ffffff;
@@ -110,24 +110,24 @@
   &__statistics {
     display: flex;
 
-    &-item {
+    &Item {
       margin-right: 20px;
       width: 190px;
 
-      &-value {
+      &Value {
         font-family: var(--font-cera), serif;
         font-size: 44px;
         line-height: 0.8;
         letter-spacing: -0.03em;
         display: inline-flex;
         align-items: center;
-        .anticon {
+        &Anticon {
           font-size: 24px;
           color: var(--color-primary-old);
           margin-right: 10px;
         }
       }
-      &-label {
+      &Label {
         font-size: 18px;
         margin-top: 0.55em;
       }
@@ -153,11 +153,11 @@
     &__desc {
       font-size: 20px;
     }
-    &__statistics-item {
-      &-value {
+    &__statisticsItem {
+      &Value {
         font-size: 34px;
       }
-      &-label {
+      &Label {
         margin-top: 0.35em;
         font-size: 16px;
       }
@@ -198,13 +198,13 @@
   }
 
   @media (max-width: 960px) and (min-width: 768px) {
-    &__statistics-item {
-      &-label {
+    &__statisticsItem {
+      &Label {
         font-size: 13px;
       }
-      &-value {
+      &Value {
         font-size: 26px;
-        .anticon {
+        &Anticon {
           font-size: 20px;
           margin-right: 8px;
         }
@@ -276,13 +276,13 @@
       top: 0;
       transform: none;
     }
-    &__statistics-item {
-      &-label {
+    &__statisticsItem {
+      &Label {
         font-size: 12px;
       }
-      &-value {
+      &Value {
         font-size: 22px;
-        .anticon {
+        &Anticon {
           font-size: 16px;
           margin-right: 6px;
         }
@@ -335,13 +335,13 @@
     &__statistics {
       flex-direction: column;
       align-items: center;
-      &-item {
+      &Item {
         margin: 15px 0 15px;
         text-align: center;
-        &-value {
+        &Value {
           position: relative;
           padding-top: 30px;
-          .anticon {
+          &Anticon {
             position: absolute;
             top: 0;
             left: 50%;

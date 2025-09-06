@@ -89,7 +89,7 @@ const HomeMain = ({
                     <div className={styles.hnMain__statistics}>
                         <div className={styles.hnMain__statisticsItem} >
                             <p className={styles.hnMain__statisticsItemValue}>
-                                <Icon name="ShieldCheck"/>
+                                <Icon className={styles.hnMain__statisticsItemValueAnticon} name="ShieldCheck"/>
                                 100%
                             </p>
                             <p className={styles.hnMain__statisticsItemLabel}>
@@ -98,7 +98,7 @@ const HomeMain = ({
                         </div>
                         <div className={styles.hnMain__statisticsItem}>
                             <p className={styles.hnMain__statisticsItemValue}>
-                                <Icon name="Smile"/>
+                                <Icon className={styles.hnMain__statisticsItemValueAnticon} name="Smile"/>
                                 4300
                             </p>
                             <p className={styles.hnMain__statisticsItemLabel}>
@@ -107,7 +107,7 @@ const HomeMain = ({
                         </div>
                         <div className={styles.hnMain__statisticsItem}>
                             <p className={styles.hnMain__statisticsItemValue}>
-                                <Icon name="ChatRoundLike"/>
+                                <Icon className={styles.hnMain__statisticsItemValueAnticon} name="ChatRoundLike"/>
                                 9000+
                             </p>
                             <p className={styles.hnMain__statisticsItemLabel}>
