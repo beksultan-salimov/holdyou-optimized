@@ -1,0 +1,357 @@
+// src/views/HomeView/HomeMain.module.scss
+@import '@/static/scss/base/media.scss';
+
+/**-------------------------------
+  * hn-main
+  *-----------------------------*/
+.hn-main {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  background: #ffffff;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  &__media {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 42.4%;
+    transform: translateY(-50%);
+
+    &-frame {
+      position: relative;
+      transform: translateX(17px);
+      user-select: none;
+      &-heart {
+        position: absolute;
+        top: 50px;
+        left: -60px;
+        max-width: none;
+        pointer-events: none;
+        user-select: none;
+        will-change: transform;
+        filter: drop-shadow(14px 16px 46px rgba(6, 104, 106, 0.29));
+        transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+    }
+  }
+  &__content {
+    flex: 1;
+    max-width: (100% - 42.4%);
+    margin-left: auto;
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+  &__title {
+    line-height: 1;
+    margin-bottom: 10px;
+    letter-spacing: -0.03em;
+    b {
+      font-weight: inherit;
+      color: var(--color-primary-old);
+      letter-spacing: -0.03em;
+    }
+  }
+  &__desc {
+    font-size: 24px;
+    margin-bottom: 1.4em;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+
+    .psh-group-item {
+      padding-left: 40px;
+      display: flex;
+      flex-direction: column-reverse;
+      line-height: 1;
+      .psh-group-item__avatars {
+        margin-bottom: 6px;
+        margin-top: 8px;
+      }
+      .btn--link {
+        line-height: 1.1;
+        & > .btn__label {
+          background: none;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    display: inline-flex;
+    flex-direction: column;
+
+    &-btn {
+      width: 100%;
+    }
+
+    .session-switcher {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__divider {
+    background: linear-gradient(90deg, #cde6e6 0%, rgba(205, 230, 230, 0) 100%);
+    display: block;
+    height: 2px;
+    width: 100%;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+
+  &__statistics {
+    display: flex;
+
+    &-item {
+      margin-right: 20px;
+      width: 190px;
+
+      &-value {
+        font-family: var(--font-cera), serif;
+        font-size: 44px;
+        line-height: 0.8;
+        letter-spacing: -0.03em;
+        display: inline-flex;
+        align-items: center;
+        .anticon {
+          font-size: 24px;
+          color: var(--color-primary-old);
+          margin-right: 10px;
+        }
+      }
+      &-label {
+        font-size: 18px;
+        margin-top: 0.55em;
+      }
+    }
+  }
+
+  @include media(lg) {
+    padding-top: 50px;
+    padding-bottom: 80px;
+    &__media {
+      &-frame {
+        transform: scale(0.9);
+        &-heart {
+          width: 120px;
+          left: -40px;
+          top: 30px;
+        }
+      }
+    }
+  }
+
+  @include media(md) {
+    &__desc {
+      font-size: 20px;
+    }
+    &__statistics-item {
+      &-value {
+        font-size: 34px;
+      }
+      &-label {
+        margin-top: 0.35em;
+        font-size: 16px;
+      }
+    }
+    &__content {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+
+  @include media(mobile-menu) {
+    // padding-bottom: 50px;
+    &__desc {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 960px) {
+    &__title {
+      font-size: 34px;
+    }
+    &__info {
+      .psh-group-item {
+        padding-left: 20px;
+      }
+    }
+
+    .psh-group-item {
+      font-size: 16px;
+    }
+    .session-switcher {
+      font-size: 14px;
+    }
+    &__cta-btn {
+      font-size: 16px;
+      height: 52px;
+    }
+  }
+
+  @media (max-width: 960px) and (min-width: 768px) {
+    &__statistics-item {
+      &-label {
+        font-size: 13px;
+      }
+      &-value {
+        font-size: 26px;
+        .anticon {
+          font-size: 20px;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 820px) {
+    padding-bottom: 50px;
+    &__info {
+      flex-direction: column;
+      align-items: flex-start;
+      .psh-group-item {
+        padding-left: 0;
+      }
+    }
+    &__divider {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  @include media(sm) {
+
+    &__content {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  @media (max-width: 820px) and (min-width: 701px), (max-width: 360px) {
+    &__media {
+      top: 0;
+      transform: none;
+      &-frame {
+        &-heart {
+          width: 100px;
+          top: 20px;
+        }
+      }
+    }
+  }
+  @media (max-width: 700px) and (min-width: 577px) {
+    &__media {
+      top: 0;
+      transform: none;
+      &-frame {
+        &-heart {
+          width: 90px;
+          top: 20px;
+          left: -30px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 820px) and (min-width: 577px) {
+    &__title {
+      font-size: 24px;
+    }
+    &__desc {
+      font-size: 15px;
+    }
+    &__cta-btn {
+      font-size: 14px;
+      height: 42px;
+    }
+    &__media {
+      top: 0;
+      transform: none;
+    }
+    &__statistics-item {
+      &-label {
+        font-size: 12px;
+      }
+      &-value {
+        font-size: 22px;
+        .anticon {
+          font-size: 16px;
+          margin-right: 6px;
+        }
+      }
+    }
+    .session-switcher {
+      height: 42px;
+      font-size: 12px;
+    }
+    .psh-group-item {
+      font-size: 14px;
+      flex-direction: row;
+      align-items: center;
+      padding-top: 20px;
+      &__content {
+        padding-left: 20px;
+      }
+    }
+  }
+
+  @include media(xs) {
+    &__media {
+      position: relative;
+      transform: none;
+      top: 0;
+      width: 340px;
+      max-width: 100%;
+      margin: 0 auto;
+      padding-right: 0;
+    }
+    &__info {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 100%;
+      .psh-group-item {
+        padding-top: 30px;
+        align-items: center;
+        width: 100%;
+      }
+    }
+    &__cta {
+      width: 100%;
+    }
+    &__content {
+      max-width: 100%;
+    }
+    &__divider {
+      display: none;
+    }
+    &__statistics {
+      flex-direction: column;
+      align-items: center;
+      &-item {
+        margin: 15px 0 15px;
+        text-align: center;
+        &-value {
+          position: relative;
+          padding-top: 30px;
+          .anticon {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+    .session-switcher-item {
+      flex: 1 0 auto;
+    }
+  }
+}

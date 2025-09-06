@@ -110,7 +110,7 @@ const CheckoutGtmSuccessPage = () => {
         }
       }
     },
-    [successUrl, router, createQueryString]
+    [successUrl, router, createQueryString, t]
   );
 
   useEffect(() => {
@@ -134,7 +134,7 @@ const CheckoutGtmSuccessPage = () => {
     };
 
     run();
-  }, [checkout_id, fetchCheckout]);
+  }, [checkout_id, fetchCheckout, createQueryString, router, successUrl]);
 
 
   return (

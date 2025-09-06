@@ -1,0 +1,136 @@
+// src/views/HomeView/HomeView.module.scss
+
+@import '@/static/scss/base/media.scss';
+
+.hnPrices {
+  padding-top: 60px;
+  background-color: #f9f9f9;
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 18px;
+  }
+}
+
+.hnPsh {
+  padding: 60px 0;
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__subtitle {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 18px;
+  }
+
+  &__info {
+    margin-bottom: 40px;
+  }
+
+  &__footer {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.hnBusinessWrapper {
+  padding: 60px 0;
+}
+
+.hnBusiness {
+  &__inner {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  &__content {
+    flex: 0 0 50%;
+  }
+
+  &__media {
+    flex-shrink: 0;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+  }
+}
+
+.hnHelp {
+  margin-top: 80px;
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  &__item {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 0 20px;
+    margin-bottom: 35px;
+    text-align: center;
+
+    b {
+      font-weight: 700;
+    }
+
+    img {
+      margin: 0 auto 18px;
+    }
+
+    @include media(sm) {
+      flex-basis: 50%;
+      max-width: 50%;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-bottom: 30px;
+      font-size: 16px;
+
+      img {
+        height: 54px;
+        width: 54px;
+        margin-bottom: 14px;
+      }
+    }
+    @include media(xxs) {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.hnPartners {
+  margin-top: 80px;
+
+  &__title {
+    margin-bottom: 40px;
+  }
+}
+
+.hnFaq {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+
+  &__title {
+    margin-bottom: 40px;
+  }
+}

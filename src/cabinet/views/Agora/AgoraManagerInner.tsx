@@ -78,7 +78,7 @@ const AgoraAllManagerInner = memo(function AgoraAllManagerInner({
       localMicrophoneTrack?.close();
       clearTimeout(timer.current);
     };
-  }, []);
+  }, [localCameraTrack, localMicrophoneTrack]);
 
   const [isLocalVideo, setIsLocalVideo] = useState(true);
   const handleToggleLocalVideo = () => {

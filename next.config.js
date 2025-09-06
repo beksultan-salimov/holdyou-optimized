@@ -7,7 +7,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
     poweredByHeader: false,
     compress: true,
-    swcMinify: true,
     images: {
         formats: ['image/avif', 'image/webp'],
         remotePatterns: [

@@ -36,7 +36,7 @@ const GlobalComponents = ({ lang }: any) => {
       <CallbackModal />
       <VideoModal />
       <GalleryModal />
-      <AppStickyButtons lang={lang} />
+      {/*<AppStickyButtons lang={lang} />*/}
       <ToastContainer
         position="top-right"
         autoClose={3000}

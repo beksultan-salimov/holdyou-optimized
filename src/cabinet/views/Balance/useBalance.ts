@@ -18,7 +18,7 @@ export const useBalance = () => {
   const consultations = useAppSelector(getBalance)
   useEffect(() => {
     dispatch(fetchBalance())
-  }, [])
+  }, [dispatch])
 
   return {
     t,

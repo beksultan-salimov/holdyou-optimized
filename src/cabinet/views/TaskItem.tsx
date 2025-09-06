@@ -25,7 +25,7 @@ const TaskItem = ({ taskId }: IProps) => {
       taskId,
       isOpen: true,
     })
-  }, [taskId])
+  }, [taskId, modalOpen])
 
   return (
     <div className="task-item">

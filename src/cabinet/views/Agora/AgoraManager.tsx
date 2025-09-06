@@ -28,7 +28,7 @@ const AgoraAllManager = ({ config, redirectUrl, clientUser, ownerUser, psycholog
       !!agoraEngine && agoraEngine?.leave();
       !!client && client?.leave();
     };
-  }, []);
+  }, [agoraEngine, client]);
 
   const { modalOpen } = useModals();
   const handleLeaveClick = async () => {

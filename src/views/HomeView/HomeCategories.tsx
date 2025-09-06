@@ -385,7 +385,7 @@ const CategoriesBlog = ({
 
 
   useEffect(() => {
-    clientFetch('/page?template=POST').then((res) => {
+    clientFetch('/page?template=POST').then((res: any) => {
       setPosts(res.results)
     });
   }, [setPosts]);

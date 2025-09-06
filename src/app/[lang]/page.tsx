@@ -3,8 +3,8 @@ import { getTranslationServer } from '@/config/i18n';
 import { LangType } from '@/config/i18n/settings';
 import { getAlternatesUrls, getOgTagsDefault } from '@/utils/helpers';
 import { getMainPageData, getMainQuiz, getSeoBySlug, getServicesSubscription } from '@/utils/services';
-import { HomeView } from '@/views/HomeView';
 import './home.scss';
+import HomeView from "@/views/HomeView/HomeView";
 
 export const revalidate = 10;
 interface IProps {

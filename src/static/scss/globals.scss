@@ -673,3 +673,18 @@ textarea {
   display: inline-block;
   font-family: var(--font-cera);
 }
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  min-height: 100vh;
+}
+
+
+.app-wrapper > header,
+.app-wrapper > footer {
+  flex-shrink: 0;
+}

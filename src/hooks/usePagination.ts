@@ -43,7 +43,7 @@ export const usePagination = ({
   //TODO need fix, because History pages has tabs and makes re-render for every tab
   useEffect(() => {
     !!action && dispatch(action({ page: page || 1 }));
-  }, [page]);
+  }, [page, action, dispatch]);
 
   const pagination = {
     total: count,

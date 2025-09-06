@@ -49,6 +49,8 @@ const HowItem = ({ item, idx }: { item: any; idx: number }) => {
           src={howWorkImgs[idx].main}
           alt={item['title']}
           className="hn-how-item__media-img"
+          height={400}
+          width={400}
         />
         <HowItemDecorate
           containerRef={containerRef}

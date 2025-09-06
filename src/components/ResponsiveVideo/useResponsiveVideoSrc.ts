@@ -44,7 +44,7 @@ export const useResponsiveVideoSrc = (
       // window.removeEventListener('resize', debouncedUpdate);
       // window.removeEventListener('orientationchange', debouncedUpdate);
     // };
-  }, [mobileSrc, desktopSrc]);
+  }, [mobileSrc, desktopSrc, getResponsiveSrc]);
 
   return src;
 };

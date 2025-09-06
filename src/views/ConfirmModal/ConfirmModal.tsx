@@ -42,7 +42,7 @@ const ConfirmModal = () => {
   const handleClickCancel = useCallback(() => {
     onCancel && typeof onCancel === 'function' && onCancel();
     modalClose(modalId);
-  }, [onCancel, modalClose]);
+  }, [onCancel, modalClose, modalId]);
 
   const header = (
     <>

@@ -105,7 +105,7 @@ export default async function Home({ params: { lang } }: IProps) {
       <Section className="home-main" container="md">
         <div className="home-main__inner">
           <div className="home-main__image">
-            <Image
+            <img
               src={heroImg}
               alt={t('home.img1_alt')}
               title={t('home.img1_alt')}
@@ -151,7 +151,7 @@ export default async function Home({ params: { lang } }: IProps) {
         </Title>
         <ul className="benefits-session-items">
           <li className="benefits-session-item">
-            <Image
+            <img
               loading="lazy"
               src={personalSecurityImg}
               alt={t('home.sessions_with_psychologist.approach')}

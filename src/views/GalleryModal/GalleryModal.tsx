@@ -47,7 +47,7 @@ const GalleryModal = () => {
       dots: showDots,
       arrows: showNav,
     }),
-    []
+    [showDots, showNav]
   );
 
   const settingsThumbnails = useMemo(
@@ -80,13 +80,13 @@ const GalleryModal = () => {
               {items?.map((item: any, idx: number) => (
                 <div key={idx} className="modal-gallery__main__item">
                   <div className="modal-gallery__main__item__inner">
-                    <Image src={item?.original} alt="" />
+                    <img src={item?.original} alt="" />
                   </div>
                 </div>
               ))}
             </Slider>
           </div>
-          {!!showThumbnails && slidesToShow > 1 && (
+          {showThumbnails && slidesToShow > 1 && (
             <div
               className="modal-gallery__thumbnails"
               style={{ width: slidesToShow * 60 }}
@@ -103,7 +103,7 @@ const GalleryModal = () => {
                 {items?.map((item: any, idx: number) => (
                   <div key={idx} className="modal-gallery__thumbnails__item">
                     <div className="modal-gallery__thumbnails__item__inner">
-                      <Image src={item?.thumbnail} alt="" />
+                      <img src={item?.thumbnail} alt="" />
                     </div>
                   </div>
                 ))}

@@ -374,8 +374,7 @@ const BuilderEditor = ({
         `pb-template-${template.toLowerCase()}`
       );
     }, 150);
-    // console.log('setEditor Instance');
-  }, [pageId, lang, t, pageData?.html_content, template, title]);
+  }, [pageId, lang, t, pageData?.html_content, template, title, pageData?.title, handleClickPreview, handleClickExit]);
 
   return (
     <div className="builder-editor">

@@ -128,7 +128,7 @@ const CertificateView = ({ lang, services }: IProps) => {
         <div className="how-items">
           <div className="how-item">
             <div className="how-item__image">
-              <Image
+              <img
                 className="img1"
                 loading="lazy"
                 src="/img/icons/register.svg"
@@ -144,7 +144,7 @@ const CertificateView = ({ lang, services }: IProps) => {
           </div>
           <div className="how-item">
             <div className="how-item__image">
-              <Image
+              <img
                 loading="lazy"
                 src="/img/icons/love-message.svg"
                 alt={t('certificate.use.step_2_description')}
@@ -159,7 +159,7 @@ const CertificateView = ({ lang, services }: IProps) => {
           </div>
           <div className="how-item">
             <div className="how-item__image">
-              <Image
+              <img
                 className="img2"
                 loading="lazy"
                 src="/img/icons/online-recruitment.svg"

@@ -58,7 +58,7 @@ const ProfilePage = () => {
             notifications ? reminderOptions[0].value : undefined,
         },
       }),
-    []
+    [reminderOptions]
   );
 
   const initialValues = {

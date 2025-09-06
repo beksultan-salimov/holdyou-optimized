@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { LangType } from '@/config/i18n/settings';
 import { serverFetch } from '@/utils/service';
 import { Title } from '@/components/Title';
-import { PsychologistCard } from '@/views/PsychologistCard';
+import PsychologistCard from '@/views/PsychologistCard';
 import { getTranslationServer } from '@/config/i18n';
 import { Container } from '@/components/Container';
 import { PsychologistCheckoutWrapper } from '@/views/PsychologistViews/PsychologistCheckoutWrapper';

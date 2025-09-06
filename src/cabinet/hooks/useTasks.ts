@@ -158,7 +158,7 @@ export const useTaskModal = (modalId: string) => {
     if (isOpen && id) {
       dispatch(fetchTask(id))
     }
-  }, [isOpen, id])
+  }, [isOpen, id, dispatch])
 
   return {
     id,

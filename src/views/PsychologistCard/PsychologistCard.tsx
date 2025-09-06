@@ -110,7 +110,7 @@ const PsychologistCard = ({
                   <span className="psh-badge__label">{item?.name}</span>
                   <span className="psh-badge__icon psh-badge__icon--right">
                     {!!item?.icon ? (
-                      <Image src={item?.icon} alt="" />
+                      <img src={item?.icon} alt="" />
                     ) : (
                       <Icon name="Langs" />
                     )}

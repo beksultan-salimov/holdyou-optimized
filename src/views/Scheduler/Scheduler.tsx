@@ -166,28 +166,22 @@ const Scheduler = ({
     }, [selectedDate, schedulersGroupByDays]);
 
     const sendOrderInPsh = useCallback(() => {
-        // if (get(allowedConsultations, [selectedService!, 'count'], 0)) {
-        //     dispatch(submitOrder({}));
-        // } else if (
-        //     selectedService === ServiceEnum.standard &&
-        //     get(allowedConsultations, [ServiceEnum.subscription, 'count'], 0)
-        // ) {
-        //     dispatch(
-        //         submitOrder({services_type_force: ServiceEnum.subscription})
-        //     );
-        // } else {
-        //     const scheduleInfo = {
-        //         selectedService: selectedService!,
-        //         selectedSchedule: selectedSchedule!,
-        //         selectedTimezone: selectedTimezone!,
-        //         selectedDate: selectedDate!,
-        //     }
+        if (get(allowedConsultations, [selectedService!, 'count'], 0)) {
+            dispatch(submitOrder({}));
+        } else if (
+            selectedService === ServiceEnum.standard &&
+            get(allowedConsultations, [ServiceEnum.subscription, 'count'], 0)
+        ) {
+            dispatch(
+                submitOrder({services_type_force: ServiceEnum.subscription})
+            );
+        } else {
             dispatch(
                 submitOrderBuy({
                     psychologistId: psychologistId as string,
                 })
             );
-        // }
+        }
     }, [psychologistId, allowedConsultations, selectedService, dispatch]);
 
     const handleClickOrderInPsh = useCallback(() => {

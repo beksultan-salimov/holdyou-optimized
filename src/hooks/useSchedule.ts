@@ -40,7 +40,7 @@ export const useCheckout = ({ psychologist }: { psychologist: IPsychologist }) =
       dispatch(clearCheckout({}));
       dispatch(clearPsychologist({}));
     };
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     // dispatch(selectPsychologist(psychologistId as string));

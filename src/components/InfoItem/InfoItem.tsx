@@ -55,7 +55,7 @@ const InfoItem = ({
     >
       <div className="info-item-inner">
         <div className="info-item-media">
-          {!!image && !icon && <Image src={image} alt="" />}
+          {!!image && !icon && <img src={image} alt="" />}
           {!image && !icon && !!iconName && (
             <Icon name={iconName} className="info-item-icon" />
           )}
